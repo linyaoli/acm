@@ -1,4 +1,22 @@
-leet
-====
+Leet Code Test
+===============
+Private code test on leetcode, geeks4geeks and careerup.
 
-Private code for testing leet questions. 
+Limitations
+-----------
+
+
+Feature ideas
+-------------
+
+
+Contributing code
+-----------------
+Free to use and contribute.
+
+Donations
+---------
+
+
+Disclaimer
+----------
