@@ -1,16 +1,32 @@
 /**
- *  given: L0->L1->L2->L3.....->Ln
- *  return: L0->Ln->L1->Ln-1->L2.....
- *
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
  */
+class Solution {
+public:
+    void reorderList(ListNode *head) {
 
-LinkedList* lst = head;
-LinkedList* mid; // we can find the mid node, using head->next and head->next->next.
-void reorder(LinkedList* head) {
-    if(!head) return;
-    if(lst == mid) return;
-    reorder(head->next);
-    head->next = lst->next;
-    lst->next = head;
-    lst = head->next;
-}
+        if (head == NULL || head->next == NULL || head->next->next == NULL)
+            return;
+
+        ListNode *_head = head;
+        ListNode *cur = _head->next;
+
+        while (cur->next != NULL) {
+
+            while (cur->next->next != NULL) {
+                cur = cur->next;
+            }
+            cur->next->next = _head->next;
+            _head->next = cur->next;
+            _head = _head->next->next;
+            cur->next = NULL;
+            cur = _head->next;
+        }
+        return;
+    }
+};
