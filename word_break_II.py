@@ -11,18 +11,15 @@ class Solution:
             for j in range(0, i, 1):
                 if s[j + 1:i + 1] in dict:
                     p[i] = p[j]
+                    print s[j + 1:i + 1]
                 else:
                     p[i] = False
                 if p[i]:
                     break
-        print s
-        print dict
-        print p
         return p[_len - 1]
 
 sol = Solution()
-s = "abcdefg"
-dict = ["a", "bc", "bcd", "ef", "efg"]
-#s = "a"
-#dict = ["b"]
+
+s = "catsanddog"
+dict = ["cat", "cats", "and", "sand", "dog"]
 print sol.wordBreak(s, dict)
