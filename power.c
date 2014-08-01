@@ -1,30 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
+class Solution:
+    # @param x, a float
+    # @param n, a integer
+    # @return a float
+    def gen(self, x, n):
+        if n == 0:
+            return 1
+        v = self.gen(x, n / 2)
+        if n % 2 == 0:
+            return v * v
+        else:
+            return v * v * x
+    def pow(self, x, n):
+        if n < 0:
+            return 1.0 / self.gen(x, -n)
+        else:
+            return self.gen(x, n)
 
-int isNegative = 0;
 
-double power(int a, int n) {
-
-    if (n==0)
-        return 1;
-    if (n<0) {
-        n = -n;
-        isNegative = 1;
-    }
-    int i = 0;
-    int result = 1;
-    for (i= 0; i < n; i++) {
-        result *= a;
-    }
-    if (isNegative == 1)
-        return  1.0/result;
-    else
-        return result;
-}
-
-int main(void) {
-
-    printf("%lf", power(2,10));
-    return 0;
-}
+sol = Solution()
+print sol.pow(4, -2)
