@@ -17,7 +17,6 @@ class Solution:
               for i in xrange(len_b):
                 if haystack[i + idx] != needle[i]:
                   i = 0
-                  
                   break
               if i == len_b - 1:
                 return haystack[idx:]
