@@ -12,8 +12,8 @@ class Solution:
         for i in xrange(1, len(A)):
             max_cp = max_local
             # A[i] * min_local : in case that A[i] < 0 and min_local < 0 makes a greater value
-            max_local = max(max(A[i] * max_local, A[i]), A[i] * min_local)
-            min_local = min(min(A[i] * max_cp, A[i]), A[i] * min_local)
+            max_local = max(A[i] * max_local, A[i], A[i] * min_local)
+            min_local = min(A[i] * max_cp, A[i], A[i] * min_local)
             res = max(res, max_local)
 
         return res
