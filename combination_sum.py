@@ -3,10 +3,8 @@ class Solution:
     # @param target, integer
     # @return a list of lists of integers
     def combinationSum(self, candidates, target):
-        res = []
-        sol = []
-        n = len(candidates)
-        self.gen(candidates, 0, n, res, sol, target)
+        res = [], sol = []        
+        self.gen(candidates, 0, len(candidates), res, sol, target)
         return res
 
     def gen(self, can, i, n, res, sol, tar):

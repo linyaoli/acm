@@ -24,12 +24,13 @@ class MinStack:
             #return -1
             #do nothing
             #FIXME should handle error
-            return 0
+            pass
     # @return an integer
-    def getMin(self):        
+    def getMin(self):
         if len(self.min_stk) != 0:
             return self.min_stk[-1]
-        return 0
+        pass
+
 
 
 sol = MinStack()
