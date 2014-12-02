@@ -13,4 +13,3 @@ class Solution:
               sol.append(i)
               self.gen(n, k, i+1, res, sol)
               sol.pop()
-            

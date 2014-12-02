@@ -6,7 +6,7 @@ class Solution:
         for word in strs:
             after_word = sorted(word)
             sorted_word = "".join(after_word)
-            
+
             if sorted_word not in lookup.keys():
                 lookup[sorted_word] = [word]
             else:
