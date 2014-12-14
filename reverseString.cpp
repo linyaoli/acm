@@ -22,5 +22,3 @@ int main(void) {
     cout<<reverseWord(str);
     return 0;
 }
-
-
