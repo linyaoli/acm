@@ -14,58 +14,36 @@ Given numerator = 2, denominator = 3, return "0.(6)".
 class Solution:
     # @return a string
     def fractionToDecimal(self, numerator, denominator):
-        n1 = numerator
-        n2 = denominator
-        if n2 == 0:
-            return False
-        if n1 == 0:
-            return 0
-
-        if n1 % n2 == 0:
-            return str(n1 / n2)
-        else:
-            remain = abs(n1) % abs(n2)
-            if abs(n1) < abs(n2):
-                remain = n1
-            decimal = self.saber(abs(remain), abs(n2))
-            if float(n1) / n2 < 0 and int(float(n1) / n2) == 0:
-                return "-0." + decimal
-            else:
-                return str(int(float(n1) / n2 )) + "." + decimal
-
-    def saber(self, num, den):
-        #FIXME
-        #round up >= 0.^5, no need ?
-        #determine where it ends.
-        res = []
-        startParenthess = 0
-        looped = False
+        isNeg = (numerator * denominator < 0)
+        n1 = abs(numerator)
+        n2 = abs(denominator)
+        lst = []
+        count = 0
+        loop_dict = {}
+        loop_str = None
         while True:
-            remain = int((num * 10) / den)
-            num = (num * 10) % den
-
-            if remain not in res:
-                res.append(remain)
-            else:
-                for i in xrange(len(res)):
-                    if res[i] == remain:
-                        startParenthess = i
+            lst.append(str(n1 / n2))
+            count += 1
+            n1 = 10 * (n1 % n2)
+            if n1 == 0:
                 break
+            loc = loop_dict.get(n1)
+            print loop_dict
+            if loc:                
+                loop_str = "".join(lst[loc:count])
+                break
+            loop_dict[n1] = count
 
-        ret = ""
-        ret_2 = ""
-        if res[-1] == 0:
-            res.pop()
-
-        for i in xrange(len(res)):
-            if i < startParenthess :
-                ret += str(res[i])
-            else:
-                ret_2 += str(res[i])
-        if ret_2 == "":
-            return ret
+        res = lst[0]
+        if len(lst) > 1:
+            res += "."
+        if loop_str:
+            res += "".join(lst[1:len(lst) - len(loop_str)]) + "(" + loop_str + ")"
         else:
-            return ret + "(" + ret_2 + ")"
+            res += "".join(lst[1:])
+        if isNeg:
+            res = "-" + res
+        return res
 
 sol = Solution()
-print sol.fractionToDecimal(1,333)
+print sol.fractionToDecimal(1,13)

@@ -21,3 +21,7 @@ class Solution:
                     return (index_num[i][0], index_num[i][1])
             if i <= target and (target - i in index_num.keys()):
                 return (index_num[i][0], index_num[target-i][0])
+
+sol = Solution()
+
+print sol.twoSum([2,7,11,15], 9)
