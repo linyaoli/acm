@@ -1,42 +1,25 @@
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
 class Solution:
     # @param preorder, a list of integers
     # @param inorder, a list of integers
     # @return a tree node
     def buildTree(self, preorder, inorder):
-        if len(preorder) == 0 or len(inorder) == 0 \
-            or len(preorder) != len(inorder):
+        n = len(inorder)
+        return self.gen(inorder, 0, n - 1, preorder, 0, n - 1)
+
+    def gen(self, inorder, instart, inend, preorder, prestart, preend):
+        if instart > inend or prestart > preend:
             return None
-
-        root = TreeNode(preorder[0])
-        mid = 0
+        rootval = preorder[prestart]
+        root = TreeNode(rootval)
+        idx = 0
         for i in xrange(len(inorder)):
-            if inorder[i] == root.val:
-                mid = i
+            if inorder[i] == rootval:
+                idx = i
+                break
+        root.left = self.gen(inorder, instart, idx - 1, \
+            preorder, prestart + 1, prestart + idx - instart)
 
-        left = TreeNode(preorder[1])
-        right = TreeNode(preorder[mid + 1])
-        root.left = left
-        root.right = right
+        root.right = self.gen(inorder, idx + 1, inend,\
+            preorder, prestart + idx - instart + 1, preend)
 
-        self.gen(root.left, preorder[1:mid + 1], inorder[:mid])
-        self.gen(root.right, preorder[mid + 1:], inorder[mid:])
-
-    def gen(self, root, preorder, inorder):
-        mid = 0
-        for i in xrange(len(inorder)):
-            if inorder[i] == root.val:
-                mid = i
-        left = TreeNode(preorder[1])
-        right = TreeNode(preorder[mid + 1])
-        root.left = left
-        root.right = right
-        
-        self.gen(root.left, preorder[1:mid + 1], inorder[:mid])
-        self.gen(root.right, preorder[mid + 1:], inorder[mid:])
+        return root
