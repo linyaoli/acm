@@ -1,39 +1,42 @@
+"""
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+push(x) -- Push element x onto stack.
+pop() -- Removes the element on top of the stack.
+top() -- Get the top element.
+getMin() -- Retrieve the minimum element in the stack.
+
+"""
+
 class MinStack:
     # @param x, an integer
     # @return an integer
-    stk = []
-    min_stk = []
+    stack = []
+    m_stack = []
     def push(self, x):
-        self.stk.append(x)
-        if len(self.min_stk) == 0 or self.min_stk[-1] >= x:
-            self.min_stk.append(x)
+        self.stack.append(x)
+        if self.m_stack == [] or self.m_stack[-1] >= x:
+            self.m_stack.append(x)
 
     # @return nothing
     def pop(self):
-        if len(self.stk) == 0:
+        if self.stack == []:
             return
-        rt = self.stk.pop()
-        if len(self.min_stk) > 0 and rt == self.min_stk[-1]:
-            self.min_stk.pop()
+        poped = self.stack[-1]
+        self.stack.pop()
+        if self.m_stack != [] and poped == self.m_stack[-1]:
+            self.m_stack.remove(poped)
 
     # @return an integer
     def top(self):
-        if len(self.stk) > 0:
-            return self.stk[-1]
-        else:
-            #return -1
-            #do nothing
-            #FIXME should handle error
-            pass
+        if self.stack != []:
+            return self.stack[-1]
+
     # @return an integer
     def getMin(self):
-        if len(self.min_stk) != 0:
-            return self.min_stk[-1]
-        pass
-
-
+        if self.m_stack != []:
+            return self.m_stack[-1]
 
 sol = MinStack()
 sol.push(-1)
-print sol.top()
-print sol.getMin()
+print sol.top(), sol.getMin()

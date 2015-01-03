@@ -23,3 +23,6 @@ class Solution:
         if upper == 1:
             c = '1' + c
         return c
+
+sol = Solution()
+print sol.addBinary("100101", "001")
