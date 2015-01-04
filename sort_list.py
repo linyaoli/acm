@@ -3,63 +3,53 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+#
+# Sort a linked list in O(n log n) time using constant space complexity.
 
 class Solution:
     # @param head, a ListNode
     # @return a ListNode
     def sortList(self, head):
-        #!/usr/bin/python
-        if head is None:
-            return None
-        if head.next is None:
-            return head
-
-        length = 0
-        it = head
-        while it is not None:
-            length = length + 1
-            it = it.next
-
-        return self.merge_sort(head, length)
-
-    def merge_sort(self, head, length):
-        if length == 1:
-            tmp = head
-            head = head.next
-            tmp.next = None
-            return tmp
-
-        leftHead = self.merge_sort(head, length / 2)
-        rightHead = self.merge_sort(head, length - length / 2)
-
-        return self.merge(leftHead, rightHead)
-
-    def merge(self, first, second):
-        head = ListNode(0)
-        head_ori = head
-        while first is not None or second is not None:
-            fv = sv = 99999999
-            if first is not None and second is None:
-                fv = first.val
-            elif first is None and second is not None:
-                sv = second.val
-            elif first is not None and second is not None:
-                fv = first.val
-                sv = second.val
-
-            if fv <= sv:
-                head.next = first
-                first = first.next
-            else:
-                head.next = second
-                second = second.next
-            head = head.next
-
-        return head_ori.next
-
-sol = Solution()
-node1 = ListNode(2)
-node2 = ListNode(1)
-node1.next = node2
-node2.next = None
-sol.sortList(node1)
+        p = head
+        n = 0
+        while p:
+            p = p.next
+            n += 1
+        fakehead = ListNode(-1)
+        fakehead.next = head
+        interval = 1
+        while interval < n + 1:
+            pre = fakehead
+            slow, fast = fakehead.next, fakehead.next
+            while slow or fast:
+                i = 0
+                while i < interval and fast:
+                    fast = fast.next
+                    i += 1
+                fvisit = 0
+                svisit = 0
+                while fvisit < interval and svisit < interval and fast and slow:
+                    if fast.val < slow.val:
+                        pre.next = fast
+                        pre = fast
+                        fast = fast.next
+                        fvisit += 1
+                    else:
+                        pre.next = slow
+                        pre = slow
+                        slow = slow.next
+                        svisit += 1
+                while fvisit < interval and fast:
+                    pre.next = fast
+                    pre = fast
+                    fast = fast.next
+                    fvisit += 1
+                while svisit < interval and slow:
+                    pre.next = slow
+                    pre = slow
+                    slow = slow.next
+                    svisit += 1
+                pre.next = fast
+                slow = fast
+            interval *= 2
+        return fakehead.next
