@@ -7,20 +7,21 @@ class Solution:
         len_b = len(needle)
         idx = 0
         if len_a < len_b:
-          return None
-        elif len_b == 0:
-          return haystack
+            return -1
+        elif len_a == 0 or len_b == 0:
+            return 0
         else:
-          while idx < len_a - len_b + 1:
-            if haystack[idx] == needle[0]:
-              i = 0
-              for i in xrange(len_b):
-                if haystack[i + idx] != needle[i]:
-                  i = 0
-                  break
-              if i == len_b - 1:
-                return haystack[idx:]
+            while idx <= len_a - len_b:
+                for i in xrange(len_b):
+                    if haystack[i + idx] != needle[i]:
+                        i = 0
+                        break
+                    if i == len_b - 1:
+                        #return haystack[idx:]
+                        return idx
+                idx += 1
+            return -1
 
-            idx += 1
 s = Solution()
 print s.strStr("mississippi", "issip")
+print s.strStr("mississippi", "ip")

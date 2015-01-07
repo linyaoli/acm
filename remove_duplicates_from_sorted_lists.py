@@ -12,10 +12,7 @@ class Solution:
             return head
         node = head
         while node.next:
-            if node.val == node.next.val and not node.next.next:
-                node.next = None
-                break
-            if node.val == node.next.val and node.next.next:
+            if node.val == node.next.val:
                 node.next = node.next.next
                 continue
 

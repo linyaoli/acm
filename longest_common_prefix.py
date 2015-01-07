@@ -21,3 +21,7 @@ class Solution:
               maxCP = maxCP[:i]
 
         return maxCP
+
+
+sol = Solution()
+print sol.longestCommonPrefix([" 123 sd12 1a", "123 sdasdasdasd"])

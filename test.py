@@ -51,10 +51,24 @@ def inorder(root):
     inorder(root)
     inorder(root.right)
 
+def merge(A, m, B, n):
+        len_a = m - 1
+        len_b = n - 1
+        i = m + n - 1
+        while i >= 0 and len_b >= 0:
+            if len_a < 0:
+                A[i] = B[len_b]
+                len_b -= 1
+            elif A[len_a] > B[len_b]:
+                A[i] = A[len_a]
+                len_a -=1
+            else:
+                A[i] = B[len_b]
+                len_b -=1
+            i -= 1
 
-count = [0] * 10
-count[1] = 10
-print count
+        print A
 
-a = sorted([1,2,3,0])
-print a
+a = [2,3, 0, 0]
+b = [1,1]
+merge(a, len(a)-len(b), b, len(b))
