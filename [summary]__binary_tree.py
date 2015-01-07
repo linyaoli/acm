@@ -225,7 +225,28 @@ Rebuild tree from preorder and inorder.
 +----------------------------------------+
 Check if the tree is complete.
 +----------------------------------------+
+def checkComplete(self, root):
+    if not root:
+        return True
+    flag = False
+    queue = [root]
+    while queue != []:
+        node = queue.pop(0)
+        if node.left:
+            if flag:
+                return False
+            queue.append(node.left)
+        else:
+            flag = True
 
+        if node.right:
+            if flag:
+                return False
+            queue.append(node.right)
+        else:
+            flag = True
+
+    return True
 
 +----------------------------------------+
 Find the longest sub bunch.
