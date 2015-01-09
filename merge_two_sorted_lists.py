@@ -12,7 +12,7 @@ class Solution:
             return (l1 or l2)
         if l1.val > l2.val:
             l1, l2 = l2, l1
-        head = l1        
+        head = l1
         while l1.next and l2:
             if l1.val <= l2.val and l2.val < l1.next.val:
                 tmp_1 = l1.next
@@ -21,6 +21,8 @@ class Solution:
                 l2.next = tmp_1
                 l2 = tmp_2
             l1 = l1.next
-        if l2 != None:
+        if l2:
             l1.next = l2
         return head
+
+            
