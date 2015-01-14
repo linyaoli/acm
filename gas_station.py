@@ -3,6 +3,7 @@ class Solution:
         sum = _sum = start = 0
         for i in range(0, len(gas), 1):
             sum += gas[i] - cost[i]
+            #_sum decides if theres a solution : _sum < 0 -? no solution
             _sum += gas[i] - cost[i]
             if sum < 0:
                 sum = 0

@@ -22,4 +22,3 @@ class Solution:
 sol = Solution()
 s = "hello world!"
 print sol.reversewords(s)
-
