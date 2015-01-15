@@ -1,34 +1,30 @@
 class Solution:
     # @return a string
     def longestPalindrome(self, s):
-        l = len(s)
-        res = 0
-        mid = 0
-        is_odd = 0
-        for i in xrange(1, l - 1):
-            tmp_res = 0
-            for j in xrange(1, min(i, l - i - 1) + 1):
-                if s[i + j] != s[i - j]:
-                    break
-                else:
-                    tmp_res += 1
-            if tmp_res > res:
-                res = tmp_res
-                mid = i
-                is_odd = 1
-            ######
-            tmp_res = 0
-            for j in xrange(1, min(i, l - i)):
-                if s[i - j + 1] != s[i + j]:
-                    break
-                else:
-                    tmp_res += 1
-            if tmp_res > res:
-                res = tmp_res
-                mid = i
-                is_odd = 0
-        if is_odd == 1:
-            return s[(mid - res):(mid + res + 1)]
-        else:
-            return s[(mid - res + 1):(mid + res + 1)]
-        
+        n = len(s)
+        if n < 2:
+            return s
+        longest = s[0]
+        for i in xrange(n - 1):
+            # even
+            p1 = self.isPalindrome(s, i, i);
+            if len(p1) > len(longest):
+                longest = p1
+            # odd
+            p2 = self.isPalindrome(s, i, i + 1)
+            if len(p2) > len(longest):
+                longest = p2
+
+        return longest
+
+    def isPalindrome(self, s, l, r):
+        n = len(s)
+        while l >= 0 and r < n and (s[l] == s[r]):
+            l -= 1
+            r += 1
+        return s[l+1:r]
+
+
+sol = Solution()
+#print sol.longestPalindrome('abbba')
+print sol.longestPalindrome("jhgtrclvzumufurdemsogfkpzcwgyepdwucnxrsubrxadnenhvjyglxnhowncsubvdtftccomjufwhjupcuuvelblcdnuchuppqpcujernplvmombpdttfjowcujvxknzbwmdedjydxvwykbbamfnsyzcozlixdgoliddoejurusnrcdbqkfdxsoxxzlhgyiprujvvwgqlzredkwahexewlnvqcwfyahjpeiucnhsdhnxtgizgpqphunlgikogmsffexaeftzhblpdxrxgsmeascmqngmwbotycbjmwrngemxpfakrwcdndanouyhnnrygvntrhcuxgvpgjafijlrewfhqrguwhdepwlxvrakyqgstoyruyzohlvvdhvqmzdsnbtlwctetwyrhhktkhhobsojiyuydknvtxmjewvssegrtmshxuvzcbrabntjqulxkjazrsgbpqnrsxqflvbvzywzetrmoydodrrhnhdzlajzvnkrcylkfmsdode")

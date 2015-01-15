@@ -2,6 +2,10 @@ class Solution:
     # @param prices, a list of integer
     # @return an integer
     def maxProfit(self, prices):
+        # one-time traversal.
+        # track the minimal price before day i.
+        # each time calculate the profit -> prices[i] - minimal_price
+        # find the largest profit.
         if prices == []:
             return 0
         max_diff = 0
@@ -12,4 +16,3 @@ class Solution:
             if price - min_price > max_diff:
                 max_diff = price - min_price
         return max_diff
-            
