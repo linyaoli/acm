@@ -4,20 +4,15 @@ class Solution:
     def findMin(self, num):
         start = 0
         end = len(num) - 1
-        while start < end:
+        ans = num[0]
+        while start <= end:
             mid = start + (end - start) / 2
-            if num[start] <= num[mid] and num[mid] <= num[end]:
-                pass
+            if num[mid] <= num[end]:
+                end = mid - 1
             else:
-                if (start + 1 == mid or start == mid) and (end == mid or mid + 1 == end):
-                    return min(num[start], num[mid], num[end])
-
-            if num[mid] > num[end]: #minimum has to be between mid and end
-                start = mid
-            if num[mid] < num[end]: # minimum has to be between mid and start
-                end = mid
-        return num[start]
-
+                start = mid + 1
+            ans = min(ans, num[mid])
+        return ans
 
 
 sol = Solution()
