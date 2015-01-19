@@ -29,11 +29,8 @@ class Solution:
         if start > end:
             return None
         mid = start + (end - start) / 2
-        left = self.sort(node, start, mid - 1)
         parent = TreeNode(node.val)
-        parent.left = left
+        parent.left = self.sort(node, start, mid - 1)
         node = node.next
         parent.right = self.sort(node, mid + 1, end)
         return parent
-
-        

@@ -2,28 +2,22 @@ class Solution:
     # @return an integer
     def lengthOfLongestSubstring(self, s):
         max_len = 0
-        _len = 0
-        lookup = {}
-        for idx in xrange(len(s)):
-          _len += 1
-          if s[idx] not in lookup:
-            lookup[s[idx]] = idx
+        m = 0
+        n = 0
+        lookup = [False for _ in xrange(256)]
+        while n < len(s):
+          if not lookup[ord(s[n])]:
+            lookup[ord(s[n])] = True
+            n += 1
           else:
-            _len = idx - lookup[s[idx]]
-            for i in lookup:
-              if lookup[i] < lookup[s[idx]]:
-                lookup[i] = lookup[s[idx]]
-            print _len, lookup
-            #print lookup[s[idx]]
-            lookup[s[idx]] = idx
+            max_len = max(max_len, n - m)
+            while s[m] != s[n]:
+                lookup[ord(s[m])] = False
+                m += 1
+            m += 1
+            n += 1
 
-            #print s[idx - _len : idx]
-
-          if _len > max_len:
-            max_len = _len
-          #print max_len
-
-        return max_len
+        return max(max_len, len(s) - m)
 
 s = Solution()
 print s.lengthOfLongestSubstring("wlrbbmbmasdas")
