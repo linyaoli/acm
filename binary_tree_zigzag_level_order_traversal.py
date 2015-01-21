@@ -9,37 +9,35 @@ class Solution:
     # @param root, a tree node
     # @return a list of lists of integers
     def zigzagLevelOrder(self, root):
-        if root is None:
+        if not root:
             return []
-        reversed = 0
-        q = []
-        res = []
-        q.append(root)
-        while len(q) != 0:
-            cur = []
-            _res = []
-            while len(q) != 0:
-                node = q.pop(0)
-                if node.left is not None:
-                    cur.append(node.left)
-                if node.right is not None:
-                    cur.append(node.right)
-                _res.append(node)
-            if reversed == 0:
-                reversed = 1
-                tmp = []
-                for item in _res:
-                    tmp.append(item.val)
-                res.append(tmp[:])
-            else:
-                reversed = 0
-                tmp = []
-                aaa = _res
-                aaa.reverse()
-                for item in aaa:
-                    tmp.append(item.val)
-                res.append(tmp[:])
-            q += cur
+        queue = [root]
+        arr = []
+        res = [[root.val]]
+        tmp = []
+        counter = 0
+        while queue != []:
+            while queue != []:
+                node = queue.pop(0)
+                if counter % 2 == 0:
+                    if node.left:
+                        arr.append(node.left)
+                    if node.right:
+                        arr.append(node.right)
+                else:
+                    if node.right:
+                        arr.append(node.right)
+                    if node.left:
+                        arr.append(node.left)
+            for node in arr[::-1]:
+                queue.append(node)
+                tmp.append(node.val)
+            if tmp != []:
+                res.append(tmp)
+            arr = []
+            tmp = []
+            counter += 1
 
         return res
-                
+
+            
