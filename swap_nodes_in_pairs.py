@@ -10,22 +10,19 @@ class Solution:
     def swapPairs(self, head):
         if head is None or head.next is None:
             return head
+        pre = None
         p = head
         q = head.next
-        r = q.next
-        head = head.next
-        while q is not None:
+        head = q
+        while p and q:
+            p.next = q.next
             q.next = p
-            if r is None or r.next is None:
-                p.next = r
-                break
-            else:
-                p.next = r.next
-            p = r
-            q = p.next
-            r = q.next
-
-
+            if pre:
+                pre.next = q
+            pre = p
+            p = p.next
+            if p:
+                q = p.next
         return head
 
         

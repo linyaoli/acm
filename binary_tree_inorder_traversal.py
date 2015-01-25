@@ -10,9 +10,8 @@ class Solution:
     # @return a list of integers
     def inorderTraversal(self, root):
         _stack = []
-        _is_done = False
         _val = []
-        while _is_done is False:
+        while True:
             if root != None:
                 _stack.append(root)
                 root = root.left
@@ -22,7 +21,7 @@ class Solution:
                     _val.append(root.val)
                     root = root.right
                 else:
-                    _is_done = True
+                    break
 
 
         return _val

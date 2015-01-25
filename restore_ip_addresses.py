@@ -3,33 +3,19 @@ class Solution:
     # @return a list of strings
 
     def restoreIpAddresses(self, s):
-        res = []
-        sol = []
-        if len(s) > 12 or len(s) < 4:
+        if len(s) > 12:
             return []
-        self.helper(s, 4, sol, "", res)
-        return res
+        sol = []
+        self.validate(0, s, "", sol, 4)
+        return sol
 
-    def helper(self, s, n, res, item, _res):
-        # illegal format: exceed maximum length = 3 or > 255.
-        if len(s) > 3 * n:
-            return
-        if item != "":
-            if int(item) > 255:
-                return
-        else:
-            if n != 4:
-                return
-        if n == 0:
-            _res.append(res)
-            print res
-        else:
-            for i in xrange(1, 4):
-                res.append(s[:i])
-                self.helper(s[i:], n - 1, res, s[:i], _res)
-                res.pop()
-        
+    def validate(self, k, s, res, sol, n):
+        if n == 0 and k == len(s):
+            sol.append(res[1:])
 
-
-sol = Solution()
-print sol.restoreIpAddresses("25525511135")
+        for i in xrange(1, 4):
+            if k + i <= len(s) and int(s[k : k + i]) < 256:
+                if int(s[k : k + i]) >= 10 ** (i-1) or s[k : k + i] == "0":
+                    res += '.' + s[k : k + i]
+                    self.validate(k + i, s, res, sol, n-1)
+                    res = res[:-i - 1]
