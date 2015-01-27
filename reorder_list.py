@@ -1,36 +1,41 @@
-/**
- * Definition for singly-linked list.append * struct ListNode {
-      *     int val;
-      *     ListNode *next;
-      *     ListNode(int x) : val(x), next(NULL) {}
-      * };
-  */
-  class Solution {
-      public:
-          void reorderList(ListNode *head) {
+class Solution:
+    # @param head, a ListNode
+    # @return nothing
+    def reorderList(self, head):
+        if not head or not head.next:
+            return head
+        # go to the mid of listnode
+        slow = head
+        fast = head
+        while True:
+            fast = fast.next
+            if not fast:
+                break
+            fast = fast.next
+            if not fast:
+                break
+            slow = slow.next
 
-                      if (head == NULL || head->next == NULL || head->next->next == NULL)
-                          return;
+        tail = self.reverse(slow)
+        slow.next = None
+        self.merge(head, tail)
 
-                      ListNode *_head = head;
-                      ListNode *cur = _head->next;
+    def reverse(self, head):
+        cur = head
+        pre = head.next
+        while pre:
+            tmp = pre.next
+            pre.next = cur
+            cur = pre
+            pre = tmp
+        return cur
 
-                      while (cur->next != NULL) {
+    def merge(self, head1, head2):
+        while head1 and head2 and head1 != head2:
+            tmp = head2.next
+            head2.next = head1.next
+            head1.next = head2
+            head1 = head2.next
+            head2 = tmp
 
-                                      while (cur->next->next != NULL) {
-                                                          cur = cur->next;
-                                                      }
-                                      cur->next->next = _head->next;
-                                      _head->next = cur->next;
-                                      _head = _head->next->next;
-                                      cur->next = NULL;
-                                      cur = _head->next;
-                                  }
-                      return;
-                  }
-  };
-                                      }
-                      }
-          }
-  }
- }
+        

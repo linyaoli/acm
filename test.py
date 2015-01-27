@@ -1,23 +1,30 @@
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 class Solution:
-    # @param num, a list of integer
-    # @return a list of lists of integer
-    def subsetsWithDup(self, S):
-        res = [[]]
-        S = sorted(S)
-        self.gen(0, len(S), S, [], res)
-        return res
+    # @param head, a ListNode
+    # @return a ListNode
+    def deleteDuplicates(self, head):
+        if not head or not head.next:
+            return head
 
-    def gen(self, i, n, S, sub, res):
-        if i == n:
-            return
+        f = ListNode(-1)
+        f.next = head
+        slow = f
+        fast = f.next
+        while fast and fast.next:
+            tmp = fast.val
+            fast = fast.next
+            deleted = 0
+            while fast and fast.val == tmp:
+                fast = fast.next
+                deleted = 1
+            if deleted:
+                slow.next = fast
+            else:
+                slow = slow.next
 
-        for j in xrange(i, n):
-            sub.append(S[j])
-            self.gen(j + 1, n, S, sub, res)
-            if sub[:] not in res:
-                res.append(sub[:])
-            sub.pop()
-
-
-sol = Solution()
-print sol.subsetsWithDup([0])
+        return f.next
