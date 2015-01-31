@@ -7,7 +7,7 @@ class Solution:
         return res
     def gen(self, n, k, start, res, sol):
         if len(sol) == k:
-            res.append(sol[:])            
+            res.append(sol[:])
         else:
           for i in xrange(start, n):
               sol.append(i+1)

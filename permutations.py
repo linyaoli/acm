@@ -18,5 +18,5 @@ class Solution:
         return res
 
 sol = Solution()
-num = [1,2,3]
+num = [1,2,3,4]
 sol.permute(num)
