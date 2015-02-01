@@ -3,8 +3,21 @@ Code Test
 Code test on tons of simple algorithm questions.
 
 <pre>
-# category
-
+|----+-------------------------------------+---------------+---------|
+|    | Challenge Name                      | Difficulty    | tag     |
+|----+-------------------------------------+---------------+---------|
+|  1 | org-tree-slide-skip-outline-level   | 0             | Numeric |
+|  2 | org-tree-slide-header               | t             | Boolean |
+|  3 | org-tree-slide-slide-in-effect      | t             | Boolean |
+|  4 | org-tree-slide-slide-in-brank-lines | 10            | Numeric |
+|  5 | org-tree-slide-slide-in-waiting     | 0.02          | Float   |
+|  6 | org-tree-slide-cursor-init          | t             | Boolean |
+|  7 | org-tree-slide-heading-emphasis     | nil           | Boolean |
+|  8 | org-tree-slide-skip-done            | nil           | Boolean |
+|  9 | org-tree-slide-modeline-display     | 'outside      | [*1]    |
+| 10 | org-tree-slide-skip-comments        | t             | Boolean |
+| 11 | org-tree-slide-activate-message     | Hello...      | String  |
+| 12 | org-tree-slide-deactivate-message   | Quit, Bye!    | String  |
 </pre>
 
 Limitations
