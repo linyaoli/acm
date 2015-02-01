@@ -1,7 +1,10 @@
 Code Test
 ===============
 Code test on tons of simple algorithm questions.
+<pre name="category">
 
+asd
+</pre>
 
 Limitations
 -----------
