@@ -16,7 +16,11 @@ Code Test
 |    9      |  anagrams        |  hash         | group anagrams.                        |
 |    10     |  atoi            |  string       | string to integer.                     |
 |    11     |  combination sum |  backtrack    |  find sum of several nums = target   |
+<<<<<<< HEAD
 |12|jump game | dynamic | determine if can reach the end.|
+=======
+
+>>>>>>> bedaa9811e24db1473188d3df777458315baa12b
 
 
 
