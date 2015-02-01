@@ -15,7 +15,8 @@ Code Test
 |    8      |  add 2 numbers   |  string       | add two numbers.                       |
 |    9      |  anagrams        |  hash         | group anagrams.                        |
 |    10     |  atoi            |  string       | string to integer.                     |
-|    11     |  combination sum |  recursion, hash|  find sum of several nums = target   |
+|    11     |  combination sum |  backtrack    |  find sum of several nums = target   |
+
 
 
 
