@@ -1,10 +1,9 @@
 Code Test
 ===============
-Code test on tons of simple algorithm questions.
-
+* Code test on tons of simple algorithm questions.
 
 |----+-------------------------------------+---------------+---------|
-|    | Challenge Name                      | Difficulty    | tag     |
+|    | Variable                            | Default value | Select  |
 |----+-------------------------------------+---------------+---------|
 |  1 | org-tree-slide-skip-outline-level   | 0             | Numeric |
 |  2 | org-tree-slide-header               | t             | Boolean |
@@ -18,6 +17,13 @@ Code test on tons of simple algorithm questions.
 | 10 | org-tree-slide-skip-comments        | t             | Boolean |
 | 11 | org-tree-slide-activate-message     | Hello...      | String  |
 | 12 | org-tree-slide-deactivate-message   | Quit, Bye!    | String  |
+
+#+BEGIN_QUOTE
+[*1] { nil| 'lighter | 'outside }
+  'outside: shown in the mode line outside of lighter
+  'lighter: shown in lighter (slow)
+       nil: nothing to be shown"
+#+END_QUOTE
 
 
 Limitations
