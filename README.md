@@ -1,7 +1,6 @@
 Code Test
 ===============
 * Code test on tons of simple algorithm questions.
-
 |----+-------------------------------------+---------------+---------|
 |    | Variable                            | Default value | Select  |
 |----+-------------------------------------+---------------+---------|
@@ -17,13 +16,6 @@ Code Test
 | 10 | org-tree-slide-skip-comments        | t             | Boolean |
 | 11 | org-tree-slide-activate-message     | Hello...      | String  |
 | 12 | org-tree-slide-deactivate-message   | Quit, Bye!    | String  |
-
-#+BEGIN_QUOTE
-[*1] { nil| 'lighter | 'outside }
-  'outside: shown in the mode line outside of lighter
-  'lighter: shown in lighter (slow)
-       nil: nothing to be shown"
-#+END_QUOTE
 
 
 Limitations
