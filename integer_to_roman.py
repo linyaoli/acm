@@ -43,3 +43,7 @@ class Solution:
         for i in result:
             res += i
       return res
+
+
+sol = Solution()
+print sol.intToRoman(3999)

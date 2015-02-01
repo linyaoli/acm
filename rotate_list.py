@@ -9,14 +9,14 @@ class Solution:
     # @param k, an integer
     # @return a ListNode
     def rotateRight(self, head, k):
-        if head is None or k == 0:
+        if not head or k == 0:
             return head
-        _len = 1
+        n = 1
         p = head
-        while p.next is not None:
+        while p.next:
             p = p.next
-            _len += 1
-        k = _len - k % _len
+            n += 1
+        k = n - k % n # possibility of rotating more than length
         p.next = head
         step = 0
         while step < k:
@@ -25,5 +25,3 @@ class Solution:
         head = p.next
         p.next = None
         return head
-
-            

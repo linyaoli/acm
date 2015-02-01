@@ -15,14 +15,10 @@ class Solution:
                     continue
                 if i > 0 and j > 0:
                     res[i][j] = res[i - 1][j] + res[i][j - 1]
-                    continue
-                if i > 0 and j == 0:
+                elif i > 0 and j == 0:
                     res[i][j] = res[i - 1][j]
-                    continue
-                if i == 0 and j > 0:
+                elif i == 0 and j > 0:
                     res[i][j] = res[i][j - 1]
-                    continue
-                if i == 0 and j == 0:
+                elif i == 0 and j == 0:
                     res[i][j] = 1
-                    continue
         return res[i][j]

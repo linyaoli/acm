@@ -1,6 +1,7 @@
-Leet Code Test
+Code Test
 ===============
-Private code test on leetcode, geeks4geeks and careerup.
+Code test on tons of simple algorithm questions.
+
 
 Limitations
 -----------
@@ -12,11 +13,11 @@ Feature ideas
 
 Contributing code
 -----------------
-Free to use and contribute.
+feel free to use and contribute.
 
 Donations
 ---------
 
-
 Disclaimer
 ----------
+Most of the questions are from leetcode, CTCI and geeks4geeks.
