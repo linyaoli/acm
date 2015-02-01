@@ -9,7 +9,7 @@ Limitations
 
 Feature ideas
 -------------
-
+![Alt text](/tree.png)
 
 Contributing code
 -----------------
