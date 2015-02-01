@@ -5,9 +5,7 @@ Code Test
 |    No.    |  Challenge Name  |     Tag       |            Description                 |
 |-----------|------------------|---------------|----------------------------------------|
 |    0      |  single number   |  bitwise      | find num appears only once.            |
-|-----------|------------------|---------------|----------------------------------------|
 |    1      |  single number ii|  bitwise      | find num appears once while others 3s. |
-|-----------|------------------|---------------|----------------------------------------|
 |    2      |  3 sum           |  sort, hash   | pick 3 nums : x + y + z = target.      |
 |-----------|------------------|---------------|----------------------------------------|
 |    3      |  3 sum closest   |  sort, hash   | pick 3 sums to min abs(target-(x+y+z)).|
