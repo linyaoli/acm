@@ -2,7 +2,7 @@ Code Test
 ===============
 Code test on tons of simple algorithm questions.
 
-<pre>
+
 |----+-------------------------------------+---------------+---------|
 |    | Challenge Name                      | Difficulty    | tag     |
 |----+-------------------------------------+---------------+---------|
@@ -18,7 +18,7 @@ Code test on tons of simple algorithm questions.
 | 10 | org-tree-slide-skip-comments        | t             | Boolean |
 | 11 | org-tree-slide-activate-message     | Hello...      | String  |
 | 12 | org-tree-slide-deactivate-message   | Quit, Bye!    | String  |
-</pre>
+
 
 Limitations
 -----------
