@@ -3,20 +3,19 @@ class Solution:
     # @param target, integer
     # @return a list of lists of integers
     def combinationSum(self, candidates, target):
-        res = [], sol = []        
-        self.gen(candidates, 0, len(candidates), res, sol, target)
+        res = []
+        self.gen(candidates, 0, len(candidates), res, [], target)
         return res
 
-    def gen(self, can, i, n, res, sol, tar):
+    def gen(self, s, i, n, res, sol, tar):
       if sum(sol) == tar:
         res.append(sorted(sol[:]))
-        return
       elif sum(sol) > tar:
-        return
+        pass
       elif i == n:
-        return
+        pass
       else:
         for j in xrange(i, n):
-          sol.append(can[j])
-          self.gen(can, j, n, res, sol, tar)
+          sol.append(s[j])
+          self.gen(s, j, n, res, sol, tar)
           sol.pop()

@@ -1,37 +1,10 @@
 class Solution:
-    # @param path, a string
-    # @return a string
-    def simplifyPath(self, path):
-        stack = []
-        word = ""
-        path += "/"
-        n = len(path)
-        i = 0
-        point = 0
-        while i < n:
-            if path[i] != '/':
-                word += path[i]
-            else:
-                if word != "":
-                    stack.append(word)
-                word = ""
-            i += 1
-
-        res = ""
-        i = 0
-        ls = []
-        while i < len(stack):
-            if stack[i] == '..':
-                if ls != []:
-                    ls.pop()
-            elif stack[i] == '.':
-                pass
-            else:
-                ls.append(stack[i])
-            i += 1
-
-        return '/' + '/'.join(ls)
+    # @param candidates, a list of integers
+    # @param target, integer
+    # @return a list of lists of integers
+    def combinationSum(self, candidates, target):
+        
 
 
 sol = Solution()
-print sol.simplifyPath("/home/")
+print sol.combinationSum([2,3,6,7], 7)
