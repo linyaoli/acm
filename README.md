@@ -1,9 +1,10 @@
 Code Test
 ===============
-* Code test on tons of simple algorithm questions.
-|----+-------------------------------------+---------------+---------|
+ Code test on tons of simple algorithm questions.
+ 
+|----|-------------------------------------|---------------|---------|
 |    | Variable                            | Default value | Select  |
-|----+-------------------------------------+---------------+---------|
+|----|-------------------------------------|---------------|---------|
 |  1 | org-tree-slide-skip-outline-level   | 0             | Numeric |
 |  2 | org-tree-slide-header               | t             | Boolean |
 |  3 | org-tree-slide-slide-in-effect      | t             | Boolean |
