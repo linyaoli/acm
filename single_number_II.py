@@ -1,23 +1,22 @@
-#!/usr/bin/python
-
-
 class Solution:
+    # @param A, a list of integer
+    # @return an integer
     def singleNumber(self, A):
-        res = int(0)
-        _len = len(A)
-        MAX_INT = 2147483647
-        for inBit in range(0, 32, 1):
-            count = 0
-            for inElem in range(0, _len, 1):
-                count = count + ((A[inElem] >> inBit) & 1)
-            res = res | ((count % 3) << inBit)
+        n = len(A)
+        ones = 0
+        twos = 0
+        for i in xrange(n):
+            # ones: binary which appears once
+            # twos: binary which appears twice
+            # if appears three times, in twos the binary is set to 0.
+            _ones = (ones ^ A[i]) & ~twos
+            twos = (ones & A[i]) | (~A[i] & twos)
+            ones = _ones            
 
-            if res > MAX_INT:
-                return res - (MAX_INT + 1) * 2
-
-        return res
+        return ones
 
 sol = Solution()
 A = [-2, -2, 1, 1, -3, 1, -3, -3, -4, -2]
 B = [-2, -2, -2, 3, 3, 3, 1]
-print sol.singleNumber(A)
+C = [7,7,8,8,9,8,7]
+print sol.singleNumber(B)
