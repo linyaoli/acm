@@ -25,6 +25,7 @@ Code Test
 |18|permutations|backtrack|return all permutations|
 |19|rotate image|array | rotate matrix by 90 degrees.(clockwise, inplace)|
 |20| 2 sum | sort, hash | find x + y = target, return index|
+|21|permutations ii| backtrack & visited|avoid duplicates|
 
 =======
 
