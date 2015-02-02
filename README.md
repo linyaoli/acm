@@ -20,6 +20,11 @@ Code Test
 |13|spiral matrix| recursion | convert matrix to spiral order.|
 |14|maximum subarray| dynamic | maximum sum of contiguous subarray. |
 |15|combination sum ii| backtrack, hash | similar to 11, avoid duplicates.|
+|16|multiply strings|string | return multiplication of the numbers as a string.|
+|17|pow(x,n)|divide-and-conquer|
+|18|permutations|backtrack|return all permutations|
+|19|rotate image|array | rotate matrix by 90 degrees.(clockwise, inplace)|
+|20| 2 sum | sort, hash | find x + y = target, return index|
 
 =======
 

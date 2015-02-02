@@ -3,20 +3,20 @@ class Solution:
     # @return a list of lists of integers
 
     def permute(self, num):
-        return self.gen(num, 0)
-
-    def gen(self, num, idx):
         res = []
-        if idx == len(num):
-            print num
-            return
-        for i in xrange(idx, len(num)):
-            num[i], num[idx] = num[idx], num[i]
-            self.gen(num, idx + 1)
-            num[i], num[idx] = num[idx], num[i]
-
+        self.gen(num, 0, res)
         return res
 
+    def gen(self, num, i, res):
+        if i == len(num) - 1:
+            res.append(num[:])
+        else:
+            for j in xrange(i, len(num)):
+                num[j], num[i] = num[i], num[j]
+                self.gen(num, i+1, res)
+                num[j], num[i] = num[i], num[j]
+
+
 sol = Solution()
-num = [1,2,3,4]
-sol.permute(num)
+num = [1,2,3]
+print sol.permute(num)
