@@ -2,19 +2,13 @@ class Solution:
     # @param A, a list of integers
     # @return a boolean
     def canJump(self, A):
-        """
-         jump[i] = max(jump[i-1], A[i-1]) -1, i!=0
-         = 0 , i==0
-        """
-        n = len(A)
-        maxCover = 0
-        start = 0
-        while start <= maxCover and start < n:
-            if A[start] + start > maxCover:
-                maxCover = A[start] + start
-            if maxCover >= n - 1:
-                return True
-            start += 1
+        max_cover = 0
+        for i in xrange(len(A)):
+            max_cover = max(max_cover - 1, A[i])
+            if max_cover == 0 and i < len(A) - 1:
+                return False
 
-        return False
-        
+        return True
+
+sol = Solution()
+print sol.canJump([3,2,1,0,4])

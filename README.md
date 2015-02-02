@@ -17,6 +17,10 @@ Code Test
 |    10     |  atoi            |  string       | string to integer.                     |
 |    11     |  combination sum |  backtrack    |  find sum of several nums = target   |
 |12|jump game | dynamic | determine if can reach the end.|
+|13|spiral matrix| recursion | convert matrix to spiral order.|
+|14|maximum subarray| dynamic | maximum sum of contiguous subarray. |
+|15|combination sum ii| backtrack, hash | similar to 11, avoid duplicates.|
+
 =======
 
 
