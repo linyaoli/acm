@@ -26,7 +26,14 @@ Code Test
 |19|rotate image|array | rotate matrix by 90 degrees.(clockwise, inplace)|
 |20| 2 sum | sort, hash | find x + y = target, return index|
 |21|permutations ii| backtrack & visited|avoid duplicates|
-
+|22|balanced binary tree| tree| balanced?|
+|23|best time stock | dynamic | |
+|24|best time stock ii | dynamic||
+|25|betting result|||
+|26|binary search| divide&conquer||
+|27|BST iterator|tree||
+|28|tree inorder traversal|tree||
+|29|wildcard matching| string | pattern matching of '?' and '*'|
 =======
 
 
