@@ -1,10 +1,11 @@
+# Definition for an interval.
+# class Interval:
+#     def __init__(self, s=0, e=0):
+#         self.start = s
+#         self.end = e
+
 class Solution:
-    # @param candidates, a list of integers
-    # @param target, integer
-    # @return a list of lists of integers
-    def combinationSum(self, candidates, target):
+    # @param intervals, a list of Interval
+    # @return a list of Interval
+    def merge(self, intervals):
         
-
-
-sol = Solution()
-print sol.combinationSum([2,3,6,7], 7)

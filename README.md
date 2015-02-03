@@ -33,7 +33,17 @@ Code Test
 |26|binary search| divide&conquer||
 |27|BST iterator|tree||
 |28|tree inorder traversal|tree||
-|29|wildcard matching| string | pattern matching of '?' and '*'|
+|29|wildcard matching| string | pattern matching of '?' and * |
+|30|n queens|backtrack | find all valid sol in NxN board.|
+|31|trapping rain water| dynamic | find left highest and right highest for each vol.|
+|32|first missing positive| partition | O(n) time, O(1) space, |
+|33|n queens ii | backtrack|count valids|
+|34|merge intervals| dynamic| |
+|35|insert intervals| dynamic| |
+|36|sudoku solver|backtrack| disgusting problem, use solution of valid sudoku|
+|37|valid number| string | |
+
+
 =======
 
 
