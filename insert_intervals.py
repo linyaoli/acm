@@ -23,6 +23,7 @@ class Solution:
                 newInterval.end = max(newInterval.end, intervals[i].end)
                 del intervals[i]
                 n -= 1
+
         intervals.append(newInterval)
         return intervals
 

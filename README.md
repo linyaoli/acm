@@ -41,7 +41,12 @@ Code Test
 |34|merge intervals| dynamic| |
 |35|insert intervals| dynamic| |
 |36|sudoku solver|backtrack| disgusting problem, use solution of valid sudoku|
-|37|valid number| string | |
+|37|valid number| string | many cases to consider|
+|38|edit distance | dynamic | insert, del, replace a char each distance, related to No.40|
+|39|search in rotated sorted array | divide & conquer| careful with cases|
+|40|minimum window substring| dynamic | two pointers, s[slow:fast] always have all the chars needed.|
+|41|longest valid parentheses | dynamic||
+
 
 
 =======

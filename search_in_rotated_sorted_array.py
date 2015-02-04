@@ -11,13 +11,18 @@ class Solution:
           if target == A[mid]:
             return mid
           if A[mid] >= A[start]:
-              if A[start] <= target and target <= A[mid]:
+              if target <= A[mid] and target >= A[start]:
                   end = mid - 1
               else:
                   start = mid + 1
           else:
-              if A[mid] >= target or target >= A[start]:
+              if target < A[mid] or target >= A[start]:
                   end = mid - 1
               else:
                   start = mid + 1
+
         return -1
+
+
+sol = Solution()
+print sol.search([3,1], 1)

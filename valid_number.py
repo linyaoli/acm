@@ -1,61 +1,66 @@
+"""
+"0" => true
+" 0.1 " => true
+"abc" => false
+"1 a" => false
+"2e10" => true
+"""
 class Solution:
     # @param s, a string
     # @return a boolean
     def isNumber(self, s):
-        #1st: remove all spaces.
-        _s = s
-        s = ""
-        #2nd: find all those illegal characters.
-        valid_set = {'1', '2', '3', '4', '5', \
-            '6', '7', '8', '9', '0', '.', 'e', ' '  \
-        }
-        # count num of '.'
-        count_dots = 0
-        for ch in _s:
-            if ch != ' ':
-                s += ch
-            if ch == '.':
-                count_dots += 1
-            if count_dots > 1:
-                return False
-            if ch not in valid_set:
-                return False
-        if s == '':
+        n = len(s)
+        i = 0
+        pre_n = 0 #num of chars before '.' or 'e'
+        post_n = 0 # num of chars after
+        isdot = ise = 0
+        while i < n:
+            ch = s[i]
+            i += 1
+            if ch.isdigit():
+                if isdot == 1 or ise == 1:
+                    post_n += 1
+                else:
+                    pre_n += 1
+            else:
+                if ch.isspace():
+                    if isdot or ise:
+                        if post_n == 0 or pre_n == 0:
+                            return False
+                    else:
+                        if pre_n != 0:
+                            return False
+                elif ch == '.':
+                    isdot += 1
+                    if isdot > 1:
+                        return False
+                elif ch == 'e':
+                    ise += 1
+                    if ise > 1:
+                        return False
+                    if pre_n == 0:
+                        return False
+                elif ch in ['-', '+']:
+                    if pre_n == 0 or (pre_n != 0 and post_n == 0):
+                        continue
+                    else:
+                        return False
+                else:
+                    return False
+
+        if pre_n == 0 and post_n == 0:
             return False
 
-        #each number can be divided to two parts . ###e###
-        head = ""
-        tail = ""
-        op = ""
-        for i in xrange(len(s)):
-            if s[i] == 'e' or s[i] == '.':
-                head = s[:i]
-                tail = s[i+1:]
-                op = s[i]
-                break
-        if head == '' and tail == '' and op != '':
-            return False
-        if (head == '' or tail == '') and op == 'e':
+        if ise and (pre_n == 0 or post_n == 0):
             return False
 
-        return self.helper(head) and self.helper(tail)
-
-
-    def helper(self, s):
-        head = ""
-        tail = ""
-        op = ""
-        for i in xrange(len(s)):
-            if s[i] == 'e' or s[i] == '.':
-                head = s[:i]
-                tail = s[i+1:]
-                op = s[i]
-                break
-        if head == '' and tail == '' and op != '':
-            return False
-        if (head == '' or tail == '') and op == 'e':
-            return False
         return True
 
+
+
+
 sol = Solution()
-print sol.isNumber("1e123")
+print sol.isNumber(".1")
+print sol.isNumber("3.")
+print sol.isNumber(". 1")
+print sol.isNumber("1 4")
