@@ -1,25 +1,33 @@
 #!/usr/bin/python
 class Solution:
     def wordBreak(self, s, dict):
-        if len(dict) == 0:
-            return False
-        s = '#' + s
-        _len = len(s)
-        p = [False] * _len
-        p[0] = True
-        for i in range(1, _len, 1):
-            for j in range(0, i, 1):
-                if s[j + 1:i + 1] in dict:
-                    p[i] = p[j]
-                    print s[j + 1:i + 1]
-                else:
-                    p[i] = False
-                if p[i]:
-                    break
-        return p[_len - 1]
+        if dict == []:
+            return []
+        res = []
+        # optimization, [i, n] is valid
+        possible = [True for _ in xrange(len(s)+1)]
+        self.helper(0, s, dict, res, [], possible)
+        return res
+
+    def helper(self, i, s, dict, res, sol, pos):
+        if i == len(s):
+            res.append(" ".join(sol))
+        else:
+            for j in xrange(i, len(s)):
+                if s[i:j+1] in dict and pos[j+1]:
+                    sol.append(s[i:j+1])
+                    sz = len(res)
+                    self.helper(j+1, s, dict, res, sol, pos)
+                    if sz == len(res):
+                        pos[j+1] = False
+                    sol.pop()
+
 
 sol = Solution()
 
 s = "catsanddog"
 dict = ["cat", "cats", "and", "sand", "dog"]
+s = "aaaaaaa"
+dict = ["aaaa", "aaa"]
+#["cats and dog", "cat sand dog"]
 print sol.wordBreak(s, dict)

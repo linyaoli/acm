@@ -46,6 +46,9 @@ Code Test
 |39|search in rotated sorted array | divide & conquer| careful with cases|
 |40|minimum window substring| dynamic | two pointers, s[slow:fast] always have all the chars needed.|
 |41|longest valid parentheses | dynamic||
+|42|candy | dynamic adjustment | adjust the candies whenever there is a trough |
+|43|dungeon game |dynamic  | table filling|
+|44|word break| backtrack & optimization | cut off unnecessary leafs|
 
 
 
