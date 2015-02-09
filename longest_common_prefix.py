@@ -24,4 +24,4 @@ class Solution:
 
 
 sol = Solution()
-print sol.longestCommonPrefix([" 123 sd12 1a", "123 sdasdasdasd"])
+print sol.longestCommonPrefix(["123 sd12 1a", "123 sdasdasdasd"])

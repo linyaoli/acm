@@ -15,10 +15,10 @@ class Solution:
         iterB = headB
         lengthA = 0
         lengthB = 0
-        while iterA is not None:
+        while iterA.next:
             iterA = iterA.next
             lengthA += 1
-        while iterB is not None:
+        while iterB.next:
             iterB = iterB.next
             lengthB += 1
         if iterA != iterB:
@@ -33,4 +33,4 @@ class Solution:
             while iterA != iterB:
                 iterA = iterA.next
                 iterB = iterB.next
-            return iterA        
+            return iterA

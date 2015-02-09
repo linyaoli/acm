@@ -1,25 +1,27 @@
 class Solution:
     # @return a boolean
     def isValid(self, s):
-        stack = []
         if len(s) == 0:
             return False
-        stack.append(s[0])
-        for i in xrange(1, len(s), 1):
-            if s[i] == '(' or s[i] == '[' or s[i] == '{':
-                stack.append(s[i])
-                continue
-            if stack  != []:
-              cur = stack[-1]
+        stack = []
+        for c in s:
+            if c in ['(', '[', '{']:
+                stack.append(c)
             else:
-              cur = ''
-            if s[i] == ')' and cur != '(':
-                return False
-            if s[i] == ']' and cur != '[':
-                return False
-            if s[i] == '}' and cur != '{':
-                return False
-            stack.pop()
+                if stack != []:
+                    top = stack[-1]
+                    stack.pop()
+                    if top == '(' and c == ')' or \
+                        top == '[' and c == ']' or \
+                        top == '{' and c == '}':
+                        continue
+                    else:
+                        return False
+                else:
+                    return False
         if len(stack) != 0:
             return False
         return True
+
+sol = Solution()
+print sol.isValid('()(([{}]{})))')

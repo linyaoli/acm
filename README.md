@@ -49,6 +49,25 @@ Code Test
 |42|candy | dynamic adjustment | adjust the candies whenever there is a trough |
 |43|dungeon game |dynamic  | table filling|
 |44|word break| backtrack & optimization | cut off unnecessary leafs|
+|45|valid parentheses | stack & string | |
+|46|merge sorted array| linear time | tail -> head merge|
+|47|excel sheet column number|
+|48|intersection of two linked lists|O(n) time O(1) space|
+|49|zigzag conversion | O(n) time math solution | dont touch this question!|
+|50|min stack| stack |retrive by maintaining another stack for mins|
+|51|reverse integer| careful with overflow||
+|52|string to integer|careful with white spaces, -/+ ,  illegal chars and overflow||
+|53|palindrome number | O(1) space -> do not use recursion (use stack space, which is not constant)||
+|54|roman to integer | (／‵Д′)／~ ╧╧ |
+|55|longest common prefix|string |
+|56|remove nth node from end of the list| linkedlist | fast and slow pointer|
+|57|pascal triangle ii | pure math problem c30, c31, c32, c33, be aware of the ultimate optimization.|
+|58|pascal triangle | read 57.||
+|59|factorial trailing zeroes | find all those 5s||
+|60|path sum | tree, recursion||
+|61|minimum depth tree| tree, recursion||
+
+
 
 
 

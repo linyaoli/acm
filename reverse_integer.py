@@ -6,12 +6,12 @@ class Solution:
         if x < 0:
             _is_negative = True
             x = -x
-
-        while x >= 10:
-            sum = (sum + x % 10) * 10
+        while x > 0:
+            if sum > 2**31/10:
+                return 0
+            sum = sum * 10 + x % 10
             x /= 10
-        sum += x
+
         if _is_negative:
             sum = -sum
-
         return sum 

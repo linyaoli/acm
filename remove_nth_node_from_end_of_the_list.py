@@ -7,22 +7,20 @@
 class Solution:
     # @return a ListNode
     def removeNthFromEnd(self, head, n):
-        if head is None:
-            return None
-        fast = head
-        slow = head
+        if not head:
+            return head
+        slow = fast = head
         count = 0
 
-        while fast != None and count < n:
+        while fast and count < n:
             fast = fast.next
             count += 1
-        if count == n and fast is None:
+        if count == n and not fast:
             head = head.next
             return head
-        while fast.next is not None:
+        while fast.next:
             slow = slow.next
             fast = fast.next
         slow.next = slow.next.next
 
         return head
-        

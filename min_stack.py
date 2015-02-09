@@ -11,8 +11,10 @@ getMin() -- Retrieve the minimum element in the stack.
 class MinStack:
     # @param x, an integer
     # @return an integer
-    stack = []
-    m_stack = []
+    def __init__(self):
+        self.stack = []
+        self.m_stack = []
+
     def push(self, x):
         self.stack.append(x)
         if self.m_stack == [] or self.m_stack[-1] >= x:
@@ -25,7 +27,7 @@ class MinStack:
         poped = self.stack[-1]
         self.stack.pop()
         if self.m_stack != [] and poped == self.m_stack[-1]:
-            self.m_stack.remove(poped)
+            self.m_stack.pop()
 
     # @return an integer
     def top(self):

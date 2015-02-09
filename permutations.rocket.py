@@ -7,15 +7,20 @@ class Solution:
             count *= i+1
             nums[i] = i+1
 
+        # find maximum f(p)
+        max_fp = 0
+
         k -= 1
-        targetNum = ""
+        targetNum = []
+        res = []
         for i in xrange(n):
             count /= n - i
             choosed = k / count
-            targetNum += str(nums[choosed]) + " "
+            targetNum.append(nums[choosed])
             for j in xrange(choosed, n-i):
                 nums[j] = nums[j+1]
             k = k % count
+        
 
         return targetNum[:-1]
 
