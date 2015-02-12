@@ -2,23 +2,17 @@ class Solution:
     # @param digits, a list of integer digits
     # @return a list of integer digits
     def plusOne(self, digits):
-        sup = 0
-        digits[-1] += 1
-        if digits[-1] < 10:
-            return digits
-        else:
-            digits[-1] %= 10
-            sup = 1
-        for i in xrange(len(digits) - 2, -1, -1):
+        sup = 1
+        i = len(digits) - 1
+        while sup != 0 and i >= 0:
             digits[i] += sup
             if digits[i] >= 10:
                 digits[i] %= 10
-                continue
             else:
                 sup = 0
-                break
+            i -= 1
         if sup == 1:
-          digits.insert(0, 1)
+            digits = [1] + digits
         return digits
 
 

@@ -9,33 +9,24 @@ class Solution:
     # @param root, a tree node
     # @return a list of lists of integers
     def levelOrder(self, root):
-        if root is None:
+        if not root:
             return []
-        res = []
-        queue = [root]
-        tmp_res = []
-        visited = 0
-        cur_lvl = 1
-        next_lvl = 0
-        while queue != []:
-            node = queue.pop(0)
-            tmp_res.append(node.val)
-            visited += 1
-            if node.left is not None:
-                queue.append(node.left)
-                next_lvl += 1
-            if node.right is not None:
-                queue.append(node.right)
-                next_lvl += 1
-            if visited == cur_lvl:
-                visited = 0
-                cur_lvl = next_lvl
-                next_lvl = 0
-                res.append(tmp_res)
-                tmp_res = []
-        return res
-
-
-
+        q = [root]
+        ret = [[root.val]]
+        while q != []:
+            tmp = []
+            while q != []:
+                t_n = q.pop(0)
+                if t_n.left:
+                    tmp.append(t_n.left)
+                if t_n.right:
+                    tmp.append(t_n.right)
+            if tmp != []:
+                tmp_ret = []
+                for i in tmp:
+                    tmp_ret.append(i.val)
+                ret.append(tmp_ret)
+                q += tmp
+        return ret
 
             

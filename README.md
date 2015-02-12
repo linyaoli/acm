@@ -66,6 +66,26 @@ Code Test
 |59|factorial trailing zeroes | find all those 5s||
 |60|path sum | tree, recursion||
 |61|minimum depth tree| tree, recursion||
+|62|binary tree level order traversal ii| queue ||
+|63|maximum depth of binary tree| recursion, make it concise||
+|64|binary tree level order traversal | queue||
+|65|symmetric tree|recursion|recursion| check(node1.left, node2.right)&&check(node1.right, node2.left)|
+|66|same tree | recursion | isSameTree(p.left, q.left)&&isSameTree(p.right, q.right)|
+|67|remove duplicates from sorted array| two pointer ||
+|68|merge sorted array|from end to start, use empty space||
+|69|remove element|two pointers||
+|70|implement strStr()| brute O(m*n), optimized KMP solution O(m+n)||
+|71|remove duplicates from sorted list|O(n)||
+|72|climb chairs| dynamic ||
+|73|plus one| |||
+|74|valid soduku|check every row, column and 3x3 boxes.||
+|75|add binary|string||
+|76|merge two sorted lists|linked list, basic op of merge sort, either merge two into one and splice ont to another||
+|77|length of last word|return the length of last word of a string.|make it as neat as possible.|
+
+
+
+
 
 
 

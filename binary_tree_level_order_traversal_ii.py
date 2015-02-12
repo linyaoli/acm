@@ -9,35 +9,24 @@ class Solution:
     # @param root, a tree node
     # @return a list of lists of integers
     def levelOrderBottom(self, root):
-        stk = [root]
-        result = []
-        while len(stk) != 0:
-            tmpList = []
-            tmpValList = []
-            while len(stk) != 0:
-                root = stk.pop(0)
-                if root is not None:
-                    tmpList.append(root)
-                    tmpValList.append(root.val)
-
-            result.append(tmpValList)
-
-            for i in xrange(len(tmpList)):
-                root = tmpList[i]
-                if root.left is not None:
-                    stk.append(root.left)
-                if root.right is not None:
-                    stk.append(root.right)
-
-        res_ = []
-        for i in xrange(len(result)-1, -1, -1):
-            if result[i] != []:
-                res_.append(result[i])
-
-        return res_
-
-
-
-
+        if not root:
+            return []
+        q = [root]
+        ret = [[root.val]]
+        while q != []:
+            tmp = []
+            while q != []:
+                tmp_node = q.pop(0)
+                if tmp_node.left:
+                    tmp.append(tmp_node.left)
+                if tmp_node.right:
+                    tmp.append(tmp_node.right)
+            if tmp != []:
+                tmp_ret = []
+                for i in tmp:
+                    tmp_ret.append(i.val)
+                ret.append(tmp_ret)
+                q += tmp
+        return ret[::-1]
 
         

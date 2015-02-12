@@ -3,26 +3,32 @@ class Solution:
     # @param b, a string
     # @return a string
     def addBinary(self, a, b):
-        na = len(a)
-        nb = len(b)
-        upper = 0
-        n = max(na, nb)
-        a = a[::-1]
-        b = b[::-1]
-        c = ""
-        for i in xrange(n):
-            ai = 0
-            bi = 0
-            if i < na:
-                ai = int(a[i]) - int('0')
-            if i < nb:
-                bi = int(b[i]) - int('0')
-            lower = (ai + bi + upper) % 2
-            upper = (ai + bi + upper) / 2
-            c = str(int('0') + lower) + c
-        if upper == 1:
-            c = '1' + c
-        return c
+        if len(a) < len(b):
+            a, b = b, a
+        n1 = len(a) - 1
+        n2 = len(b) - 1
+        a = list(a)
+        b = list(b)
+        sup = 0
+        while n2 >= 0:
+            tmp = int(a[n1]) ^ int(b[n2]) ^ sup#remain
+            sup = (int(a[n1]) + int(b[n2]) + sup) / 2#increase
+            a[n1] = str(tmp)
+            n1 -= 1
+            n2 -= 1
+        while n1 >= 0:
+            if sup == 1:
+                tmp = (int(a[n1]) + sup) % 2
+                sup = (int(a[n1]) + sup) / 2
+                a[n1] = str(tmp)
+                n1 -= 1
+            else:
+                break
+        if sup == 1:
+            return '1' + "".join(a)
+        else:
+            return "".join(a)
+
 
 sol = Solution()
-print sol.addBinary("100101", "001")
+print sol.addBinary("1", "1")

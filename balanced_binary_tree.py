@@ -8,23 +8,24 @@
 class Solution:
     # @param root, a tree node
     # @return a boolean
-
     def isBalanced(self, root):
-        if root is None:
-            return True
-        val = self.getBalance(root)
-        if val == -1:
+        res = self.helper(root)
+        if res == -1:
             return False
         return True
-    def getBalance(self, root):
-        if root is None:
+
+    def helper(self, root):
+        if not root:
             return 0
-        left = self.getBalance(root.left)
-        if left == -1:
+        if not root.left and not root.right:
+            return 1
+        left_depth = self.helper(root.left)
+        if left_depth == -1:
             return -1
-        right = self.getBalance(root.right)
-        if right == -1:
+        right_depth = self.helper(root.right)
+        if right_depth == -1:
             return -1
-        if abs(left - right) > 1:
+        if abs(left_depth - right_depth) <= 1:
+            return max(left_depth, right_depth) + 1
+        else:
             return -1
-        return max(left, right) + 1
