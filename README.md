@@ -24,7 +24,7 @@ Code Test
 |17|pow(x,n)|divide & conquer|
 |18|permutations|backtrack|return all permutations|
 |19|rotate image|array | rotate matrix by 90 degrees.(clockwise, inplace)|
-|20| 2 sum | sort, hash | find x + y = target, return index|
+|20|2 sum| sort, hash | find x + y = target, return index|
 |21|permutations ii| backtrack & visited|avoid duplicates|
 |22|balanced binary tree| tree| balanced?|
 |23|best time stock | dynamic | |
@@ -82,6 +82,12 @@ Code Test
 |75|add binary|string||
 |76|merge two sorted lists|linked list, basic op of merge sort, either merge two into one and splice ont to another||
 |77|length of last word|return the length of last word of a string.|make it as neat as possible.|
+|78|gray code|find the patterns lie within the sequence||
+|79|find peak element| binary search | O(logn)|
+|80|gas station|dynamic | maintain a sum var, if it becomes negative, which means current start is not valid, start a new route in the next station.|
+|81|clone graph| queue, graph, breath-first traversal| use nodeMap to mark the connectivity between graph node and cloned node|
+|82|
+
 
 
 

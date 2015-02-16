@@ -17,30 +17,23 @@ class Solution:
     # @param num, a list of integer
     # @return an integer
     def findPeakElement(self, num):
-        start = 0
-        end = len(num) - 1
-        n = end
-        if n == 0:
+        start = 1
+        end = len(num)
+        if end == 0:
             return 0
+        num = [-9223372036854775807] + num + [-9223372036854775807]
         while start <= end:
             mid = start + (end - start) / 2
-            if num[mid] < self.gen(num, mid + 1, n):
-                if self.gen(num, mid + 1, n) > self.gen(num, mid + 2, n):
-                    return mid + 1
+            if num[mid] < num[mid + 1]:
+                if num[mid+1] > num[mid+2]:
+                    return mid
                 else:
                     start = mid
             else:
-                if self.gen(num, mid - 1, n) < self.gen(num, mid, n):
-                    return mid
+                if num[mid-1] < num[mid]:
+                    return mid - 1
                 else:
                     end = mid
 
-    def gen(self, num, i, n):
-        if i > n:
-            return -9223372036854775807
-        if i < 0:
-            return -9223372036854775807
-        return num[i]
-
 sol = Solution()
-print sol.findPeakElement([1, 2])
+print sol.findPeakElement([1])

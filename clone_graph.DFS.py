@@ -7,7 +7,7 @@
 class Solution:
     # @param node, a undirected graph node
     # @return a undirected graph node
-    # @BFS
+    # @DFS
     def cloneGraph(self, node):
         def dfs(input, map):
             if input in map:
