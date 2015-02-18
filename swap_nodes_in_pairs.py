@@ -8,21 +8,21 @@ class Solution:
     # @param a ListNode
     # @return a ListNode
     def swapPairs(self, head):
-        if head is None or head.next is None:
+        if not head or not head.next:
             return head
-        pre = None
-        p = head
-        q = head.next
-        head = q
-        while p and q:
-            p.next = q.next
-            q.next = p
-            if pre:
-                pre.next = q
-            pre = p
-            p = p.next
-            if p:
-                q = p.next
-        return head
+        p = None
+        q = head
+        r = head.next
+        head = head.next
 
-        
+        while q and r:
+            q.next = r.next
+            r.next = q
+            if p:
+                p.next = r
+            p = q
+            q = p.next
+            if q:
+                r = q.next
+
+        return head

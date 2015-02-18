@@ -2,21 +2,25 @@ class Solution:
     # @param an integer
     # @return a list of string
     def generateParenthesis(self, n):
-        lis = []
-        self.gen(n, n, '', lis)
-        return lis
+        ret = []
+        self.helper(n, n, ret, "")
+        return ret
 
-    def gen(self, left, right, pair, lis):
-        if left == 0:
-            while right > 0:
-                pair += ')'
-                right -= 1
-            lis.append(pair)
-            return
-        if right == 0:
-            lis.append(pair)
-            return
-        self.gen(left - 1, right, pair + '(', lis)
-        if left < right:
-            self.gen(left, right - 1, pair + ')', lis)
-        
+    def helper(self, l, r, ret, str):
+        if l == 0:
+            while r > 0:
+                str += ')'
+                r -= 1
+            ret.append(str)
+        else:
+            if l > 0:
+                str += '('
+                self.helper(l-1, r, ret, str)
+                str = str[:-1]
+            if l < r:
+                str += ')'
+                self.helper(l, r-1, ret, str)
+                str = str[:-1]
+
+sol = Solution()
+print sol.generateParenthesis(3)

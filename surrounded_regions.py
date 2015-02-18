@@ -9,6 +9,7 @@ class Solution:
         n = len(board[0])
         xIdx = []
         yIdx = []
+        #mark those 0s on the edge.
         for i in xrange(m):
             if board[i][0] == 'O':
                 xIdx.append(i)
@@ -16,7 +17,6 @@ class Solution:
             if board[i][n - 1] == 'O':
                 xIdx.append(i)
                 yIdx.append(n - 1)
-
         for i in xrange(n):
             if board[0][i] == 'O':
                 xIdx.append(0)
@@ -24,7 +24,9 @@ class Solution:
             if board[m - 1][i] == 'O':
                 xIdx.append(m - 1)
                 yIdx.append(i)
+
         k = 0
+        #constantly traverse the table to mark all linked regions by 'Y'.
         while k < len(xIdx):
             x = xIdx[k]
             y = yIdx[k]
@@ -46,7 +48,7 @@ class Solution:
             for j in xrange(n):
                 if board[i][j] == 'O':
                     board[i][j] = 'X'
-                if board[i][j] == 'Y':
+                elif board[i][j] == 'Y':
                     board[i][j] = 'O'
         print board
 

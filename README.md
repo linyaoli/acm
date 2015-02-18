@@ -27,8 +27,8 @@ Code Test
 |20|2 sum| sort, hash | find x + y = target, return index|
 |21|permutations ii| backtrack & visited|avoid duplicates|
 |22|balanced binary tree| tree| balanced?|
-|23|best time stock | dynamic | |
-|24|best time stock ii | dynamic||
+|23|best time stock | dynamic | track the minimum price and find the largest difference |
+|24|best time stock ii | dynamic| key:: stock[i+n] - stock[i]  = stock[i+n] - stock[i+n-k] + stock[i+n-k] - stock[i]|
 |25|betting result|||
 |26|binary search| divide&conquer||
 |27|BST iterator|tree||
@@ -86,7 +86,35 @@ Code Test
 |79|find peak element| binary search | O(logn)|
 |80|gas station|dynamic | maintain a sum var, if it becomes negative, which means current start is not valid, start a new route in the next station.|
 |81|clone graph| queue, graph, breath-first traversal| use nodeMap to mark the connectivity between graph node and cloned node|
-|82|
+|82|palindrome partitioning| backtrack | cutoff unnecessary branches.|
+|83|surrounded regions| mark 0s on the edge, then find those 0s connected to them.||
+|84|sum root to leaf|recursion| path = path*10 + root.val|
+|85|3sum closest|similar to 3sum||
+|86|4sum | preprocess the sum of all pais and store in dict for lookup can reduce time cost||
+|87|word ladder|graph| do it either dfs or iteratively bfs||
+|88|letter combinations of a phone number|backtrack|make a dict of num -> letters|
+|89|longest substring without repeating characters|dynamic| map or a lookup table, make it neat|
+|90|triangle| dynamic | similar to finding num of path in grid|
+|91|longest palindrome substring| common O(n*n) with optimization| Manacher's method, linear solution|
+|92|binary search tree iterator| recursion | make it neat|
+|93|repeated DNA sequence|ez, use map|
+|94|largest number| compare : int(str(s2) + str(s1)) - int(str(s1) + str(s2)) ||
+|95|populating next right pointers in each node|recursion, use the transitivity|
+|96|generate parenthesis|backtrack, track left_num and right_num||
+|97|flatten binary tree to linkedlist|bottom-up||
+|98|path sum ii|recursion, top-down||
+|99|convert sorted array to binary search tree|recursion|inorder, topdown|
+|100|convert sorted list to binary search tree|recursion |similar to 99|
+|101|construct binary tree from inorder and postorder traversal|recursion||
+|102|construct binary tree from preorder and inorder traversal|recursion||
+|103|find minimum in rotated sorted array|ans = min(ans, num[mid])||
+|104|binary tree zigzag order traversal|queue, track the level order||
+|105|maximum product subarray|dynamic| track the minimum value in case of negative|
+|106|reverse words in a string|||
+|107|evaluate reverse polish notation|stack| make it neat.|
+|108|swap nodes in pairs|linked list| do it in space|p, q, r three pointers, p is the node before two swapped nodes.|
+|109|validate binary search tree|track the min and max of each path, top-down||
+
 
 
 

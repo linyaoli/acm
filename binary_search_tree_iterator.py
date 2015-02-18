@@ -13,15 +13,14 @@ class BSTIterator:
 
     # @return a boolean, whether we have a next smallest number
     def hasNext(self):
-        return self.stack
+        return self.stack != []
 
     # @return an integer, the next smallest number
     def next(self):
-        top = self.stack.pop()
-        self.push(top.right)
-        return top.val
+        node = self.stack.pop()
+        self.push(node.right)
+        return node.val
 
-    # push left child to stack.
     def push(self, node):
         while node:
             self.stack.append(node)

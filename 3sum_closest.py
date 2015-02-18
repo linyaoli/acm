@@ -1,7 +1,8 @@
+import sys
 class Solution:
     # @return an integer
     def threeSumClosest(self, num, target):
-        MIN = 100000
+        MIN = sys.maxint
         res = 0
         num.sort()
         n = len(num)

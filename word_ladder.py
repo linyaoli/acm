@@ -4,22 +4,20 @@ class Solution:
     # @param dict, a set of string
     # @return an integer
     def ladderLength(self, start, end, dict):
-        if start == None or end == None or \
+        if not start or not end or \
             start == "" or end == "" or len(start) != len(end):
-            return 0;
+            return 0
         n = len(start)
-        dict.append(end)
+        dict.append(end)        
         queue = [[start, 1]]
 
-        while (len(queue) != 0):
+        while queue != []:
             [cur, curDist] = queue.pop(0)
             if cur == end:
                 return curDist
-
             for i in xrange(26):
                 for j in xrange(n):
                     new_word = cur[:j] + chr(97 + i) + cur[j + 1:]
-
                     if new_word in dict:
                         queue.append([new_word, curDist + 1])
                         dict.remove(new_word)

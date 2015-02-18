@@ -1,7 +1,7 @@
 class Solution:
 # @param s, a string
 # @return a string
-    def reversewords(self, s):
+    def reverseWords(self, s):
         # cp str to returned var
         s = s + " "
         s_cp = ""
@@ -21,4 +21,4 @@ class Solution:
 
 sol = Solution()
 s = "hello world!"
-print sol.reversewords(s)
+print sol.reverseWords(s)

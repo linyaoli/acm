@@ -14,7 +14,7 @@ class Solution:
             p2 = self.isPalindrome(s, i, i + 1)
             if len(p2) > len(longest):
                 longest = p2
-
+            i += len(longest)/2
         return longest
 
     def isPalindrome(self, s, l, r):

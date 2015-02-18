@@ -1,25 +1,19 @@
-#Leetcode question : triangle.
+class Solution:
+    # @param triangle, a list of lists of integers
+    # @return an integer
+    def minimumTotal(self, triangle):
+        n = len(triangle)
+        best = [triangle[0][0]]
+        for i in xrange(1, n):
+            m = len(triangle[i])
+            _best = best
+            best = []
+            for j in xrange(0, m):
+                if j == 0:
+                    best.append(_best[0] + triangle[i][j])
+                elif j == m - 1:
+                    best.append(_best[-1] + triangle[i][j])
+                else:
+                    best.append(min(_best[j], _best[j - 1]) + triangle[i][j])
 
-triangle = [[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]
-totallv = 4
-
-dp = [[0], [0, 0], [0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0]]
-result = 0
-
-# bot-up iteratively
-for i in range(totallv - 1, -1, -1):
-    for j in range(0, i + 1, 1):
-        if dp[i][j] == 0:
-            if i == totallv - 1:
-                dp[i][j] = triangle[i][j]
-            else:
-                dp[i][j] = dp[i + 1][j] + triangle[i][j]
-        tmp1 = triangle[i][j] + dp[i + 1][j + 1]
-        tmp2 = triangle[i][j] + dp[i + 1][j]
-        if tmp1 < dp[i][j]:
-            dp[i][j] = tmp1
-        if tmp2 < dp[i][j]:
-            dp[i][j] = tmp2
-
-print "By dynamical programming, we have a solution of O(n)"
-print dp
+        return min(best)

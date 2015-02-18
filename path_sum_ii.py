@@ -10,26 +10,22 @@ class Solution:
     # @param sum, an integer
     # @return a list of lists of integers
     def pathSum(self, root, sum):
-        res = []
-        lis = []
-        if root is not None:
-            self.gen(root, sum, 0, res, lis)
-        return res
+        ret = []
+        self.helper(root, ret, [], total=sum)
+        return ret
 
-
-    def gen(self, root, sum, n, res, lis):
-        lis.append(root.val)
-        n += root.val
-        if n == sum and root.left is None and root.right is None:
-            res.append(lis[:])
+    def helper(self, root, ret, path, total):
+        if not root:
+            return 0
+        #is leaf node
+        path.append(root.val)
+        if not root.left and not root.right:
+            if total == sum(path):
+                ret.append(path[:])
         else:
-            if root.left is not None:
-                self.gen(root.left, sum, n, res, lis)
-            if root.right is not None:
-                self.gen(root.right, sum, n, res, lis)
-        lis.pop()
-        n -= root.val
-        return
-
-
-        
+            if root.left:
+                self.helper(root.left, ret, path, total)
+                path.pop()
+            if root.right:
+                self.helper(root.right, ret, path, total)
+                path.pop()

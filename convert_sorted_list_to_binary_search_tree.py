@@ -23,14 +23,18 @@ class Solution:
         while iter is not None:
             n += 1
             iter = iter.next
-        return self.sort(head, 0, n - 1)
+        #need a global var to mark
+        self.node = head
+        return self.sort(0, n - 1)
 
-    def sort(self, node, start, end):
+    def sort(self, start, end):
         if start > end:
             return None
+
         mid = start + (end - start) / 2
-        parent = TreeNode(node.val)
-        parent.left = self.sort(node, start, mid - 1)
-        node = node.next
-        parent.right = self.sort(node, mid + 1, end)
+        left = self.sort(start, mid - 1)
+        parent = TreeNode(self.node.val)
+        parent.left = left
+        self.node = self.node.next
+        parent.right = self.sort(mid + 1, end)
         return parent

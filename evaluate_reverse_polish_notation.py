@@ -1,24 +1,22 @@
 class Solution:
     def evalRPN(self, tokens):
         mock_stack = []
-        operator_arr = ['+', '-', '*', '/']
         for token in tokens:
-            if token == operator_arr[0]:
-                mock_stack[-2] = float(mock_stack[-2]) + float(mock_stack[-1])
-                mock_stack.pop(-1)
-            elif token == operator_arr[1]:
-                mock_stack[-2] = float(mock_stack[-2]) - float(mock_stack[-1])
-                mock_stack.pop(-1)
-            elif token == operator_arr[2]:
-                mock_stack[-2] = float(mock_stack[-2]) * float(mock_stack[-1])
-                mock_stack.pop(-1)
-            elif token == operator_arr[3]:
-                mock_stack[-2] = float(mock_stack[-2]) / float(mock_stack[-1])
-                mock_stack[-2] = int(mock_stack[-2])
-                mock_stack.pop(-1)
-            else:
-                mock_stack.append(token)
-        return int(mock_stack[-1])
+            k = token
+            if token in ['+', '-', '*', '/']:                
+                m = mock_stack.pop()
+                n = mock_stack.pop()
+                if token == '+':
+                    k = m + n
+                elif token == '-':
+                    k = n - m
+                elif token == '*':
+                    k = m * n
+                elif token == '/':
+                    k = int(float(n) / float(m))
+            mock_stack.append(int(k))
+
+        return mock_stack[0]
 
 sol = Solution()
 setter = ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
