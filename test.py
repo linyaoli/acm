@@ -6,7 +6,21 @@
 #         self.right = None
 
 class Solution:
-    # @param num, a list of integers
-    # @return a tree node
+    # @param root, a tree node
+    # @return a list of integers
+    def inorderTraversal(self, root):
+        stack = []
+        ans = []
+        while True:
+            if root:
+                stack.append(root)
+                ans.append(root.val)
+                root = root.left
+            else:
+                if stack:
+                    root = stack.pop()
+                    root = root.right
+                else:
+                    break
 
-    def sortedArrayToBST(self, num):
+        return ans

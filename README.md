@@ -114,8 +114,17 @@ Code Test
 |107|evaluate reverse polish notation|stack| make it neat.|
 |108|swap nodes in pairs|linked list| do it in space|p, q, r three pointers, p is the node before two swapped nodes.|
 |109|validate binary search tree|track the min and max of each path, top-down||
-
-
+|110|fraction to recurring decimal| a little bit tricky, need to mark the remain.||
+|111|unique binary search trees (count)| dynamic | select 0<=i<=n as root:  arr[0:i] as the left tree, arr[i+1:n] as right tree.|
+|112|unique binary search trees ii| tree traversal| a little tricky to use recursion|
+|113|binary tree inorder traversal | iteratively ||
+|114|binary tree preorder traversal | iteratively||
+|115|restore ip addresses|backtrack||
+|116|reverse linked list ii|||
+|117|subsets ii|backtrack||
+|118|decode ways|dynamic| tricky, use three rotation vars to make the ways of s[:i-1], s[:i] and current ways, check s[i-1:i+1] (two digits) if it is valid.|
+|✮ 119|sort list| TRICKY | Note: use constant space, which means cannot use stack / recursion.|
+|120|
 
 
 

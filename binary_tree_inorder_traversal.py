@@ -9,28 +9,18 @@ class Solution:
     # @param root, a tree node
     # @return a list of integers
     def inorderTraversal(self, root):
-        _stack = []
-        _val = []
+        stack = []
+        ans = []
         while True:
-            if root != None:
-                _stack.append(root)
+            if root:
+                stack.append(root)
                 root = root.left
             else:
-                if _stack != []:
-                    root = _stack.pop()
-                    _val.append(root.val)
+                if stack:
+                    root = stack.pop()
+                    ans.append(root.val)
                     root = root.right
                 else:
                     break
 
-
-        return _val
-
-
-
-
-
-
-
-
-            
+        return ans

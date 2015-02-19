@@ -27,13 +27,10 @@ class Solution:
             n1 = 10 * (n1 % n2)
             if n1 == 0:
                 break
-            loc = loop_dict.get(n1)
-            print loop_dict
-            if loc:                
-                loop_str = "".join(lst[loc:count])
+            if n1 in loop_dict:
+                loop_str = "".join(lst[loop_dict[n1]:count])
                 break
-            loop_dict[n1] = count
-
+            loop_dict[n1] = count        
         res = lst[0]
         if len(lst) > 1:
             res += "."

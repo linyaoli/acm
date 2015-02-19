@@ -4,12 +4,12 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+import sys
 class Solution:
     # @param root, a tree node
     # @return a boolean
     def isValidBST(self, root):
-        return self.validate(root, 10000000000, -10000000000)
+        return self.validate(root, sys.maxint, -sys.maxint-1)
 
 
     def validate(self, root, max_int, min_int):
