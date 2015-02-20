@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
 class Solution:
     # @param head, a ListNode
@@ -11,20 +11,16 @@ class Solution:
         if not head or not head.next:
             return head
 
-        f = ListNode(-1)
-        f.next = head
-        slow = f
-        fast = f.next
-        while fast and fast.next:
-            tmp = fast.val
-            fast = fast.next
-            deleted = 0
-            while fast and fast.val == tmp:
-                fast = fast.next
-                deleted = 1
-            if deleted:
-                slow.next = fast
+        dummy = ListNode(-1)
+        dummy.next = head
+        ptr = dummy
+        while head and head.next:
+            if head.val == head.next.val:
+                while head.next and head.val == head.next.val:
+                    head = head.next
+                ptr.next = head.next
             else:
-                slow = slow.next
+                ptr = ptr.next
+            head = head.next
 
-        return f.next
+        return dummy.next

@@ -76,7 +76,7 @@ Code Test
 |69|remove element|two pointers||
 |70|implement strStr()| brute O(m*n), optimized KMP solution O(m+n)||
 |71|remove duplicates from sorted list|O(n)||
-|72|climb chairs| dynamic ||
+|72|climb stairs| dynamic ||
 |73|plus one| |||
 |74|valid soduku|check every row, column and 3x3 boxes.||
 |75|add binary|string||
@@ -124,8 +124,41 @@ Code Test
 |117|subsets ii|backtrack||
 |118|decode ways|dynamic| tricky, use three rotation vars to make the ways of s[:i-1], s[:i] and current ways, check s[i-1:i+1] (two digits) if it is valid.|
 |✮ 119|sort list| TRICKY | Note: use constant space, which means cannot use stack / recursion.|
-|120|
-
+|✮ 120|insertion sort list| o(n^2) | optimization|
+|✮ 121|partition list| do it in space, do not create new nodes.|use two pointers.|
+|✮ 122|divide two integers| ||
+|123| remove duplicates from sorted list ii|
+|124| reverse linked list| both iteratively and recursively||
+|125| container with most water | o(n), two pointers||
+|126| search in rotated sorted array ii| with dupicates|
+|127| remove duplicates from sorted array ii | each num is allowed for existing twice.||
+|128| merge sorted array|||
+|129| remove element|
+|130| implement strstr()|
+|131| remove duplicates from sorted list||
+|132| word search | dfs & backtrack, mark visited||
+|133| subsets | backtrack||
+|134| combinations| backtrack||
+|✮ 135| next permutation|
+|136|sort colors| the "holland flag" problem||
+|137|search a 2d matrix|
+|138|set matrix zeroes| do it in space, use the first column and row to save the state|
+|139|search for a range|binary search||
+|140|simplify path|||
+|141|binary tree preorder traversal|iteratively|
+|142|sqrt(x)|
+|143|search insertion position in sorted array| binary search | find the target or position i where A[i-1]<target<A[i]|
+|144|reorder list| find the mid -> reverse the right section -> merge||
+|145|linked list cycle| check if exist|
+|146|linked list cycle ii | find the start position|
+|147|integer to roman||
+|148|minimum path sum| similar to unique path||
+|149|unique paths|
+|150|unique paths ii|
+|151|rotate list| possibility of rotating longer than length k = n - k%n
+|152|permutation sequence|
+|153|spiral matrix ii|
+|154|word break
 
 
 

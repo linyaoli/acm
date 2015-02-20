@@ -35,4 +35,6 @@ class Solution:
         else:
           end = mid - 1
       return [index1, index2]
-        
+
+sol = Solution()
+print sol.searchRange([5, 7, 7, 8, 8, 10], 8)

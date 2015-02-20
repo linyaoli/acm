@@ -1,19 +1,19 @@
 class Solution:
-    # @param A a list of integers
+    # @param a list of integers
     # @return an integer
     def removeDuplicates(self, A):
-        length = len(A)
-        if length <= 2:
-          return length
-        prev = 1
-        curr = 2
-        while curr < length:
-          if A[curr] == A[prev] and A[curr] == A[prev - 1]:
-            curr += 1
-          else:
-            prev += 1
-            A[prev] = A[curr]
-            curr += 1
-
-        return prev + 1
-            
+        if len(A) == 0 or len(A) == 1:
+            return len(A)
+        i = 0
+        count = 1
+        for j in xrange(1, len(A)):
+            if A[i] != A[j]:
+                count = 1
+                i += 1
+                A[i] = A[j]
+            else:
+                if count < 2:
+                    i += 1
+                    A[i] = A[j]
+                    count += 1
+        return i+1

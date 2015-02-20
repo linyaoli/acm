@@ -2,18 +2,18 @@ class Solution:
     # @param A a list of integers
     # @return nothing, sort in place
     def sortColors(self, A):
-        length = len(A)
-        m = 0
-        n = length - 1
-        idx = 0
-        while idx < n + 1:
-            if A[idx] == 0:
-                A[m], A[idx] = A[idx], A[m]
-                m += 1
-                idx += 1
-                continue
-            if A[idx] == 2:
-                A[n], A[idx] = A[idx], A[n]
-                n -= 1
-                continue
-            idx += 1
+        flag0 = 0
+        flag1 = 0
+        flag2 = len(A) - 1        
+        while flag1 <= flag2:
+            if A[flag1] == 2:
+                A[flag1], A[flag2] = A[flag2], A[flag1]
+                flag2 -= 1
+            elif A[flag1] == 0:
+                A[flag0], A[flag1] = A[flag1], A[flag0]
+                flag0 += 1
+                flag1 += 1
+            else:
+                flag1 += 1
+
+        return A

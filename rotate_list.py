@@ -17,6 +17,7 @@ class Solution:
             p = p.next
             n += 1
         k = n - k % n # possibility of rotating more than length
+        #link the tail and head
         p.next = head
         step = 0
         while step < k:

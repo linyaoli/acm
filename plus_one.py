@@ -2,19 +2,14 @@ class Solution:
     # @param digits, a list of integer digits
     # @return a list of integer digits
     def plusOne(self, digits):
-        sup = 1
-        i = len(digits) - 1
-        while sup != 0 and i >= 0:
-            digits[i] += sup
-            if digits[i] >= 10:
-                digits[i] %= 10
-            else:
-                sup = 0
-            i -= 1
-        if sup == 1:
+        up = 1
+        for i in xrange(len(digits)-1, -1, -1):
+            _t = digits[i] + up
+            up, digits[i] = _t / 10, _t % 10
+        if up == 1:
             digits = [1] + digits
-        return digits
 
+        return digits
 
 
 s = Solution()

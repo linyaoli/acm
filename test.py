@@ -1,26 +1,24 @@
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
 class Solution:
-    # @param root, a tree node
-    # @return a list of integers
-    def inorderTraversal(self, root):
-        stack = []
-        ans = []
-        while True:
-            if root:
-                stack.append(root)
-                ans.append(root.val)
-                root = root.left
+    # @param A a list of integers
+    # @return nothing, sort in place
+    def sortColors(self, A):
+        flag0 = 0
+        flag2 = len(A) - 1
+        flag1 = 0
+        while flag1 <= flag2:
+            if A[flag1] == 2:
+                A[flag1], A[flag2] = A[flag2], A[flag1]
+                flag2 -= 1
+            elif A[flag1] == 0:
+                A[flag0], A[flag1] = A[flag1], A[flag0]
+                flag0 += 1
+                flag1 += 1
             else:
-                if stack:
-                    root = stack.pop()
-                    root = root.right
-                else:
-                    break
+                flag1 += 1
 
-        return ans
+        return A
+
+
+
+sol = Solution()
+print sol.sortColors([0, 2,1])

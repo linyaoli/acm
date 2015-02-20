@@ -5,7 +5,7 @@ class Solution:
         _res = obstacleGrid
         n = len(_res)
         m = len(_res[0])
-        if _res[-1][-1] == 1:
+        if _res[-1][-1] == 1 or _res[0][0] == 1:
             return 0
         res = [[0] * m] * n
         for i in xrange(n):

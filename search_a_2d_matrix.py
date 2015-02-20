@@ -9,19 +9,6 @@ class Solution:
         n = len(matrix[0])
         if matrix[0][0] > target:
             return False
-        """
-        while m >= 0 and n >= 0:
-            if matrix[m][n] == target:
-                return True
-            if matrix[m][n] < target:
-                n += 1
-            if n > len(matrix[0]) - 1:
-                return False
-            if matrix[m][n] > target:
-                m -= 1
-            if m < 0:
-                return False
-        """
         start = 0
         end = m - 1
         i = 0

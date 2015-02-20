@@ -3,33 +3,44 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
+#  partition it such that all nodes less than x come before nodes greater than or equal to x.
 
 class Solution:
     # @param head, a ListNode
     # @param x, an integer
     # @return a ListNode
     def partition(self, head, x):
-        node = ListNode(x - 1)
-        node.next = head
-        head = node
-        # find the first smaller node
+        cur = head
         pre = None
-        while node is not None and node.val < x:
-            pre = node
-            node = node.next
-        if node is not None:
-            cur = pre
-            while node is not None:
-                if node.val < x:
-                    tmp = cur.next
-                    pre.next = node.next
-                    cur.next = node
-                    cur = node
-                    node.next = tmp
-                    node = pre
-                pre = node
-                node = node.next
-        tmp = head
-        head = head.next
+        # find the first node which is smaller than x.
+        while cur and cur.val >= x:
+            pre = cur
+            cur = cur.next
+        if not cur:
+            # if not exist
+            return head
+        # put the mark in the front
+        if cur != head:
+            pre.next = cur.next
+            cur.next = head
+            head = cur
+
+        # start insertion
+        pre = cur
+        trav = cur.next
+        while trav:
+            if trav.val < x:
+                if pre != cur:
+                    pre.next = trav.next
+                    trav.next = cur.next
+                    cur.next = trav
+                    cur = cur.next
+                    trav = pre.next
+                    continue
+                else:
+                    cur = cur.next
+                    
+            pre = pre.next
+            trav = trav.next
+
         return head
-          

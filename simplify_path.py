@@ -2,32 +2,25 @@ class Solution:
     # @param path, a string
     # @return a string
     def simplifyPath(self, path):
-        saber = [] # word
+        names = []
         word = ""
+        path += "/"
         for i in xrange(len(path)):
             if path[i] != '/':
                 word += path[i]
             else:
-                if word == '.':
-                    word = "" # do nothing
-                elif word == "..":
-                    if len(saber) >= 1:
-                        saber.pop()
-                else:
-                    if word != "":
-                        saber.append(word)
+                if word != "":
+                    names.append(word)
                 word = ""
-        if word != "":
-            if word == "..":
-                if len(saber) >= 1:
-                    saber.pop()
-            elif word != ".":
-                saber.append(word)
 
-        word = ""
+        ls = []
+        for i in xrange(len(names)):
+            if names[i] == '..':
+                if ls != []:
+                    ls.pop()
+            elif names[i] == '.':
+                pass
+            else:
+                ls.append(names[i])
 
-        for x in xrange(len(saber)):
-            word += "/" + saber[x]
-        if word == "":
-            return '/'
-        return word
+        return '/' + '/'.join(ls)
