@@ -18,7 +18,7 @@ class Solution:
                 res[item.end] = -1
             else:
                 res[item.end] -= 1
-        saber = 0
+        saber = 0#mark the intervals which share ranges.
         start = 0
         f_res = []
         tmp_res = []
@@ -35,5 +35,3 @@ class Solution:
                 start = 0
 
         return f_res
-
-                

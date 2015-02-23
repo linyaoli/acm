@@ -31,9 +31,9 @@ Code Test
 |24|best time stock ii | dynamic| key:: stock[i+n] - stock[i]  = stock[i+n] - stock[i+n-k] + stock[i+n-k] - stock[i]|
 |25|betting result|||
 |26|binary search| divide&conquer||
-|27|BST iterator|tree||
+|✮ 27|BST iterator|tree||
 |28|tree inorder traversal|tree||
-|29|wildcard matching| string | pattern matching of '?' and * |
+|✮ 29|wildcard matching| string | pattern matching of '?' and * |
 |30|n queens|backtrack | find all valid sol in NxN board.|
 |31|trapping rain water| dynamic | find left highest and right highest for each vol.|
 |32|first missing positive| partition | O(n) time, O(1) space, |
@@ -41,8 +41,8 @@ Code Test
 |34|merge intervals| dynamic| |
 |35|insert intervals| dynamic| |
 |36|sudoku solver|backtrack| disgusting problem, use solution of valid sudoku|
-|37|valid number| string | many cases to consider|
-|38|edit distance | dynamic | insert, del, replace a char each distance, related to No.40|
+|✮✮ 37|valid number| string | many cases to consider|
+|✮✮ 38|edit distance | dynamic | insert, del, replace a char each distance, related to No.40|
 |39|search in rotated sorted array | divide & conquer| careful with cases|
 |40|minimum window substring| dynamic | two pointers, s[slow:fast] always have all the chars needed.|
 |41|longest valid parentheses | dynamic||
@@ -85,13 +85,13 @@ Code Test
 |78|gray code|find the patterns lie within the sequence||
 |79|find peak element| binary search | O(logn)|
 |80|gas station|dynamic | maintain a sum var, if it becomes negative, which means current start is not valid, start a new route in the next station.|
-|81|clone graph| queue, graph, breath-first traversal| use nodeMap to mark the connectivity between graph node and cloned node|
+|✮ 81|clone graph| queue, graph, breath-first traversal| use nodeMap to mark the connectivity between graph node and cloned node|
 |82|palindrome partitioning| backtrack | cutoff unnecessary branches.|
 |83|surrounded regions| mark 0s on the edge, then find those 0s connected to them.||
 |84|sum root to leaf|recursion| path = path*10 + root.val|
 |85|3sum closest|similar to 3sum||
 |86|4sum | preprocess the sum of all pais and store in dict for lookup can reduce time cost||
-|87|word ladder|graph| do it either dfs or iteratively bfs||
+|✮ 87|word ladder|graph| do it either dfs or iteratively bfs||
 |88|letter combinations of a phone number|backtrack|make a dict of num -> letters|
 |89|longest substring without repeating characters|dynamic| map or a lookup table, make it neat|
 |90|triangle| dynamic | similar to finding num of path in grid|
@@ -158,7 +158,18 @@ Code Test
 |151|rotate list| possibility of rotating longer than length k = n - k%n
 |152|permutation sequence|
 |153|spiral matrix ii|
-|154|word break
+|✮ 154|word break| dynamic| use an array to mark |
+|✮ 155|recover binary search tree| recursion | O(logn) space to create a in-sys stack.|
+|156|best time to buy and sell stack iii|
+|✮ 157|best time to buy and sell stack iv|
+|158|longest valid parentheses|dynamic|
+|159|minimum windows substring|
+|✮ 160|merge intervals|o(nlgn)
+|✮ 161|insert intervals| o(n)
+|162|text justification|
+|163|
+
+
 
 
 

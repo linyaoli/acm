@@ -10,10 +10,8 @@ class Solution:
     def gen(self, s, i, n, res, sol, tar):
       if sum(sol) == tar:
         res.append(sorted(sol[:]))
-      elif sum(sol) > tar:
-        pass
-      elif i == n:
-        pass
+      elif sum(sol) > tar or i == n:
+        return
       else:
         for j in xrange(i, n):
           sol.append(s[j])
