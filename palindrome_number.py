@@ -30,21 +30,17 @@ class Solution:
         if x < 0:
             return False
         # n digits
-        n = 0
-        _x = x
-        while _x > 0:
-            _x /= 10
-            n += 1
+        n = len(str(x))
         i = 1
         while  i <= n / 2:
             right = x % 10
             left = x / pow(10, n - i * 2 + 1)
             if right != left:
                 return False
-            else:
-                x -= right + left * pow(10, n - i * 2 + 1)
-                x /= 10
-                i += 1
+
+            x -= right + left * pow(10, n - i * 2 + 1)
+            x /= 10
+            i += 1
 
         return True
 

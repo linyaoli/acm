@@ -167,7 +167,15 @@ Code Test
 |✮ 160|merge intervals|o(nlgn)
 |✮ 161|insert intervals| o(n)
 |162|text justification|
-|163|
+|✮✮ 163|largest rectangle in histogram| stack, dynamic
+|✮ 164|maximal rectangle|
+|✮✮ 165|scramble string|
+|✮ 166|interleaving string|
+|167|jump game ii|
+|168|compare version number|
+|169|count and say|
+|170|zigzag conversion|
+
 
 
 

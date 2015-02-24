@@ -12,8 +12,7 @@ class Solution:
                 return 1
             elif int(v1[i]) < int(v2[i]):
                 return -1
-            else:
-                pass
+            
         if len(v1) > len(v2):
             for i in xrange(len(v2), len(v1)):
                 if int(v1[i]) > 0:

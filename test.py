@@ -1,24 +1,19 @@
 class Solution:
-    # @param A a list of integers
-    # @return nothing, sort in place
-    def sortColors(self, A):
-        flag0 = 0
-        flag2 = len(A) - 1
-        flag1 = 0
-        while flag1 <= flag2:
-            if A[flag1] == 2:
-                A[flag1], A[flag2] = A[flag2], A[flag1]
-                flag2 -= 1
-            elif A[flag1] == 0:
-                A[flag0], A[flag1] = A[flag1], A[flag0]
-                flag0 += 1
-                flag1 += 1
-            else:
-                flag1 += 1
-
-        return A
+    # @return an integer
+    def reverse(self, x):
+        if x > 2**31-1 or x < -2**31:
+            return 0
+        ifneg = x < 0
+        x = abs(x)
+        ret = 0
+        for i in xrange(len(str(x))):
+            ret = ret * 10 + x % 10
+            x /= 10
+        if ifneg :
+            return -ret
+        return ret
 
 
 
 sol = Solution()
-print sol.sortColors([0, 2,1])
+print sol.reverse(1534236469)
