@@ -1,27 +1,21 @@
 class Solution:
     # @return a string
     def countAndSay(self, n):
-        count = 1
-        say = "1"
-        while count < n:
-            print say
-            last_char = say[0]
-            tmp_say = ""
-            tmp_count = 0
-            for c in say:
-                if c == last_char:
-                    tmp_count += 1
+        s = "1"
+        for i in xrange(1, n):
+            tmp = ""
+            last = s[0]
+            count = 1
+            for j in xrange(1, len(s)):
+                if last == s[j]:
+                    count += 1
                 else:
-                    tmp_say += str(tmp_count) + last_char
-                    last_char = c
-                    tmp_count = 1
-            tmp_say += str(tmp_count) + last_char
-            last_char = c
-            tmp_count = 1
-            say = tmp_say
-            count += 1
+                    tmp += str(count) + last
+                    last = s[j]
+                    count = 1
+            s = tmp + str(count) + last
 
-        return say
+        return s
 
 sol = Solution()
 print sol.countAndSay(10)

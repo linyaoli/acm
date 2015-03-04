@@ -22,7 +22,7 @@ class Solution:
                 for m in xrange(9):
                     if j != m and board[j][i] == board[m][i] and board[j][i].isdigit():
                         return False
-        print "1"
+        
         # 3. every 3x3 board
 
         for i in xrange(3):

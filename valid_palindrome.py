@@ -3,17 +3,21 @@ class Solution:
     # @return a boolean
     def isPalindrome(self, s):
         #remove all non-alphanumic chas
-        _len = len(s)
-        _s = ""
-        for idx in xrange(_len):
-            if s[idx].isdigit() is True or s[idx].isalpha() is True:
-                _s += s[idx].lower()
-        if _s == "":
-            return True
-        #check
-        _len = len(_s)
-        for x in xrange(_len / 2):
-          if _s[x] != _s[_len - 1 - x]:
-            return False
+        n = len(s)
+        l = 0
+        r = n - 1
+        while l <= r - 1:
+            while not s[l].isalpha() and not s[l].isdigit() and l <= r - 1:
+                l += 1
+            while not s[r].isalpha() and not s[r].isdigit() and l <= r - 1:
+                r -= 1
+
+            if s[l].upper() != s[r].upper():
+                return False
+            l += 1
+            r -= 1
 
         return True
+
+sol = Solution()
+print sol.isPalindrome("1a2")
