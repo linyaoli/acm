@@ -4,10 +4,11 @@ using namespace std;
 
 int  main(){
 
-  vector<bool> a(10, true);
-  for (int i = 0; i< 10;i++)
-    cout<<a[i]<<endl;
+  int* a = new int[10];
+  a[0] = 1;
+  cout<<a[0]<<endl;
 
-return 0;
+  delete a;
+
 
 }

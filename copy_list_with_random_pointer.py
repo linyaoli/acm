@@ -9,33 +9,27 @@ class Solution:
     # @param head, a RandomListNode
     # @return a RandomListNode
     def copyRandomList(self, head):
-        if head is None:
-            return None
+        if not head: return head
         cur = head
-        while cur is not None:
-            post = RandomListNode(cur.label)
-            post.next = cur.next
-            cur.next = post
-            cur = post.next
-
-        # copy random pointer
+        while cur:
+            tmp = RandomListNode(cur.label)
+            tmp.next = cur.next
+            cur.next = tmp
+            cur = tmp.next
+        #copy random pointer
         cur = head
-        while cur is not None:
-            post = cur.next
-            if cur.random is not None:
-                post.random = cur.random.next
-            cur = post.next
-        #
+        while cur:
+            tmp = cur.next
+            if cur.random:
+                tmp.random = cur.random.next
+            cur = tmp.next
+        # decouple
         cur = head
-        dup = head
-        if head is not None:
-            dup = head.next
-        while cur is not None:
+        dup = head.next
+        while cur:
             tmp = cur.next
             cur.next = tmp.next
-            if tmp.next is not None:
+            if tmp.next:
                 tmp.next = tmp.next.next
             cur = cur.next
         return dup
-
-            
