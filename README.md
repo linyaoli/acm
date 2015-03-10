@@ -182,6 +182,9 @@ Code Test
 |175|read N characters given read 4 - call multiple times||
 |177|merge k sorted linked lists| use merge two sorted linked lists as operation, O(nklogk). Alternative solution: heap|
 |178|copy list with random pointer| try not to break the list|
+|179|bianry tree maximum path sum | the start and end node can be anywhere in the tree, node value can be negative.|
+|180|bianry tree upside down|
+|181|revaluate reverse polish notation|
 
 
 

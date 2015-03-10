@@ -14,27 +14,22 @@
 class Solution:
     # @param head, a list node
     # @return a tree node
-
     def sortedListToBST(self, head):
-        if head is None:
-            return None
-        n = 0
-        iter = head
-        while iter is not None:
-            n += 1
-            iter = iter.next
-        #need a global var to mark
+        if not head: return head
         self.node = head
-        return self.sort(0, n - 1)
+        head = head.next
+        end = 0
+        while head: end += 1; head = head.next
+        return self.helper(0, end)
 
-    def sort(self, start, end):
-        if start > end:
-            return None
-
-        mid = start + (end - start) / 2
-        left = self.sort(start, mid - 1)
+    def helper(self, start, end):
+        if start > end: return None
+        mid = (start + end) /2
+        left = self.helper(start, mid - 1)
         parent = TreeNode(self.node.val)
         parent.left = left
+        # after divide the list into two parts, we move the node to the next one,
+        # it will represent the head of the second half list.
         self.node = self.node.next
-        parent.right = self.sort(mid + 1, end)
+        parent.right = self.helper(mid + 1, end)
         return parent

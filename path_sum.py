@@ -14,12 +14,9 @@ class Solution:
         return self.gen(root, 0, sum)
 
     def gen(self, root, n, sum):
-        if root is None:
-            return False
+        if not root: return False
         n += root.val
-        if root.left is None and root.right is None:
-            if n == sum:
-                return True
-            else:
-                return False
+        if not root.left and not root.right:
+            if n == sum: return True
+            else: return False
         return self.gen(root.left, n, sum) or self.gen(root.right, n, sum)

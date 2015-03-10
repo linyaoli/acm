@@ -3,15 +3,15 @@ class Solution:
         mock_stack = []
         for token in tokens:
             k = token
-            if token in ['+', '-', '*', '/']:                
+            if token in ['+', '-', '*', '/']:
                 m = mock_stack.pop()
                 n = mock_stack.pop()
                 if token == '+':
-                    k = m + n
+                    k = n + m
                 elif token == '-':
                     k = n - m
                 elif token == '*':
-                    k = m * n
+                    k = n * m
                 elif token == '/':
                     k = int(float(n) / float(m))
             mock_stack.append(int(k))
