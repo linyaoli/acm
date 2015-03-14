@@ -14,4 +14,4 @@ def b_search(ls, tar):
     return False
 
 ls = [1,3,4,5,6,7,8,10]
-print b_search(ls, 10)
+print b_search(ls, 9)

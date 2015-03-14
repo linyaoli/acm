@@ -1,5 +1,5 @@
 int StrToInt ( const char* str ) {
-  
+
     static const int MAX_INT = (int32_t)((unsigned)~0 >> 1);
     static const int MIN_INT = (int32_t)((unsigned)~0 >> 1) - 1;
     unsigned int n = 0;

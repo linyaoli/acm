@@ -185,6 +185,8 @@ Code Test
 |179|bianry tree maximum path sum | the start and end node can be anywhere in the tree, node value can be negative.|
 |180|bianry tree upside down|
 |181|revaluate reverse polish notation|
+|182|coins in a line|
+|183|find minimum in rotated sorted array| array with duplicates
 
 
 
