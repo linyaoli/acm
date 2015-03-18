@@ -1,7 +1,0 @@
-#!/bin/bash
-# auto committing all leet files.
-
-git add .
-git status
-git commit -m "auto commit"
-git push

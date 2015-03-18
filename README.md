@@ -187,6 +187,8 @@ Code Test
 |181|revaluate reverse polish notation|
 |182|coins in a line|
 |183|find minimum in rotated sorted array| array with duplicates
+|184|reverse bits| = reverse integers|
+|185|rotate array| = rotate string|
 
 
 

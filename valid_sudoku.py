@@ -10,7 +10,7 @@ class Solution:
         # 1. every row and column
 
         for i in xrange(9):
-            for j in xrange(8):
+            for j in xrange(9):
                 for m in xrange(j+1, 9):
                     if (board[i][j] == board[i][m] and board[i][j].isdigit()) \
                         or (board[j][i] == board[m][i] and board[j][i].isdigit()):
@@ -21,8 +21,8 @@ class Solution:
         for i in xrange(3):
             for j in xrange(3):
                 for m in xrange(9):
-                    for n in xrange(9):
-                        if m != n and board[i * 3 + m / 3][j * 3 + m % 3] == board[i * 3 + n / 3][j * 3 + n % 3] \
+                    for n in xrange(m+1, 9):
+                        if board[i * 3 + m / 3][j * 3 + m % 3] == board[i * 3 + n / 3][j * 3 + n % 3] \
                          and board[i * 3 + m / 3][j * 3 + m % 3].isdigit():
                             return False
 
