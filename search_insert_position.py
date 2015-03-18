@@ -54,4 +54,4 @@ class Solution:
 
 sol = Solution()
 print sol.searchInsert([1,2,4,4,8,16,17], 17)
-print sol.searchInsert2([1,2,4,4,8,16,17], 17)
+print sol.searchInsert2([1,2,4,4,8,16,17], 3)

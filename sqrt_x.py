@@ -15,4 +15,4 @@ class Solution:
       return (upper + lower) /2
 
 s = Solution()
-print s.sqrt(1)
+print s.sqrt(300)
