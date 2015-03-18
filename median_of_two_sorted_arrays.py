@@ -40,6 +40,4 @@ sol = Solution()
 A = [1,9,9,9,10,11,13]
 B = [2,2,3,6,7,9,10]
 
-
-
 print sol.findMedianSortedArrays(A,B)
