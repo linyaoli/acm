@@ -5,7 +5,8 @@ git add .
 echo "*****  All files loaded *****"
 git status
 echo "*****  change log *****"
-git commit -m "auto commit"
+now=$(date + "%T")
+git commit -m "auto commit : $now"
 echo "* uploading ...  *"
 git push
 echo "DONE !"
