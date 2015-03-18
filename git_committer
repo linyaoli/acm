@@ -2,6 +2,10 @@
 # auto committing all leet files.
 
 git add .
+echo "*****  All files loaded *****"
 git status
+echo "*****  change log *****"
 git commit -m "auto commit"
+echo "* uploading ...  *"
 git push
+echo "DONE !"
