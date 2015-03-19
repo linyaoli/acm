@@ -9,7 +9,7 @@ class Solution:
         length = len(prices)
 
         for idx in xrange(0, length - 1):
-            diff = prices[idx + 1] - prices[idx];
+            diff = prices[idx + 1] - prices[idx]
             if diff > 0:
                 sum += diff
         return sum

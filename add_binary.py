@@ -16,6 +16,7 @@ class Solution:
             a[n1] = str(tmp)
             n1 -= 1
             n2 -= 1
+        #if n1 is longer.
         while n1 >= 0:
             if sup == 1:
                 tmp = (int(a[n1]) + sup) % 2

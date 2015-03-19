@@ -24,3 +24,19 @@ class Solution:
                     break
 
         return ans
+
+    def inorderTraversal2(self, root):
+        stack = []
+        ans = []
+        if not root: return ans
+        while stack != [] or root:
+            # always push left nodes at first.
+            while root:
+                stack.append(root)
+                root = root.left
+            # once done pushing, pop a node.
+            # if it has right child, go right.
+            root = stack.pop()
+            ans.append(root.val)
+            root = root.right
+        return ans

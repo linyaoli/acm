@@ -3,6 +3,7 @@ def b_search(ls, tar):
     start = 0
     end = n - 1
     while start <= end:
+        # avoid overflow
         mid = start + ((end - start) >> 1)
         if ls[mid] > tar:
             end = mid - 1

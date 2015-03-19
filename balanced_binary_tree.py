@@ -10,15 +10,16 @@ class Solution:
     # @return a boolean
     def isBalanced(self, root):
         if not root: return True
-        res = self.helper(root)
-        return res != -1
+        return self.helper(root) != -1
 
     def helper(self, root):
         if not root: return 0
         left_depth = self.helper(root.left)
         if left_depth == -1: return -1
+
         right_depth = self.helper(root.right)
         if right_depth == -1: return -1
+        
         if abs(left_depth - right_depth) <= 1:
             return max(left_depth, right_depth) + 1
         else:

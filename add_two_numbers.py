@@ -11,7 +11,7 @@ class Solution:
         head = ListNode(0)
         cur = head
 
-        while l1 is not None and l2 is not None:
+        while l1 and l2:
             tmp = l1.val + l2.val + carry
             _new = ListNode(tmp % 10)
             carry = tmp / 10
@@ -20,7 +20,7 @@ class Solution:
             l1 = l1.next
             l2 = l2.next
 
-        while l1 is not None:
+        while l1:
             tmp = l1.val + carry
             _new = ListNode(tmp % 10)
             carry = tmp / 10
@@ -28,7 +28,7 @@ class Solution:
             cur = _new
             l1 = l1.next
 
-        while l2 is not None:
+        while l2:
             tmp = l2.val + carry
             _new = ListNode(tmp % 10)
             carry = tmp / 10
@@ -41,5 +41,3 @@ class Solution:
             cur.next = _new
 
         return head.next
-
-            
