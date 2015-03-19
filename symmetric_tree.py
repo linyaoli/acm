@@ -9,8 +9,7 @@ class Solution:
     # @param root, a tree node
     # @return a boolean
     def isSymmetric(self, root):
-        if not root:
-            return True
+        if not root: return True
         return self.check(root.left, root.right)
 
     def check(self, node1, node2):
