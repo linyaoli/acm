@@ -5,5 +5,4 @@ for i in xrange(1, n + 1):
         i = i / 5
         count += 1
 
-
 print count

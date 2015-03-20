@@ -17,5 +17,5 @@ class Solution:
             for neighbor in input.neighbors:
                 output.neighbors.append(dfs(neighbor, map))
             return output
-        if node == None: return None
+        if not node: return None
         return dfs(node, {})

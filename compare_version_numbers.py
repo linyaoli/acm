@@ -5,14 +5,13 @@ class Solution:
     def compareVersion(self, version1, version2):
         v1 = version1.split('.')
         v2 = version2.split('.')
-        print v1, v2
         len_min = min(len(v1), len(v2))
         for i in xrange(len_min):
             if int(v1[i]) > int(v2[i]):
                 return 1
             elif int(v1[i]) < int(v2[i]):
                 return -1
-            
+
         if len(v1) > len(v2):
             for i in xrange(len(v2), len(v1)):
                 if int(v1[i]) > 0:
@@ -25,6 +24,7 @@ class Solution:
             return 0
 
         return 0
+
 
 sol = Solution()
 print sol.compareVersion('01', '1')

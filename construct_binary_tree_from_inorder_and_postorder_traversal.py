@@ -18,7 +18,7 @@ class Solution:
                 break
 
         root.left = self.gen(inorder, instart, idx - 1, \
-            postorder, poststart, poststart + idx - (instart + 1))
+            postorder, poststart, poststart + (idx - 1 - instart))
 
         root.right = self.gen(inorder, idx + 1, inend, postorder, poststart + idx - instart, \
             postend - 1)

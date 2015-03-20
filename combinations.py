@@ -2,16 +2,17 @@ class Solution:
     # @return a list of lists of integers
     def combine(self, n, k):
         res = []
-        sol = []
-        self.gen(n, k, 0, res, sol)
+        self.k = k
+        self.gen(n, 0, res, [])
         return res
-    def gen(self, n, k, start, res, sol):
-        if len(sol) == k:
+
+    def gen(self, n, start, res, sol):
+        if len(sol) == self.k:
             res.append(sol[:])
         else:
           for i in xrange(start, n):
               sol.append(i+1)
-              self.gen(n, k, i+1, res, sol)
+              self.gen(n, i+1, res, sol)
               sol.pop()
 
 sol = Solution()
