@@ -5,7 +5,7 @@
 "1 a" => false
 "2e10" => true
 """
-# An elegant version of finite automata, so so elegant.
+# An elegant version of Finite automata machine, so so elegant.
 # not from my knowledge.
 class Solution:
     # @param s, a string

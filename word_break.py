@@ -11,6 +11,8 @@ class Solution:
                     if j == 0:
                         p[i-1] = True
                     else:
+                        # if s[:j] is consist of valid words.
+                        # or s[:i] is a valid word.
                         p[i-1] = p[i-1] or p[j-1]
         return p[-1]
 

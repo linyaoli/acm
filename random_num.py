@@ -15,6 +15,7 @@ def random_subset( it, K ):
             result[ s ] = item
 
     return result
+    
 lst = range(100)
 it = range(1,100,1)
 for i in it:

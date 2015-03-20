@@ -9,7 +9,6 @@ class Solution:
                     break
             else:
                 n += 1
-
         return n
 
 

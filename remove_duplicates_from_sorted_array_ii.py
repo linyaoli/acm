@@ -1,3 +1,4 @@
+# duplicates will only allow appear once. 
 class Solution:
     # @param a list of integers
     # @return an integer

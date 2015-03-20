@@ -11,13 +11,11 @@ class Solution:
     # @return an integer
 
     def minDepth(self, root):
-        if root is None:
-            return 0
+        if not root: return 0
         return self.gen(root)
 
     def gen(self, root):
-        if root is None:
-            return 0
+        if not root: return 0
         left = self.gen(root.left)
         right = self.gen(root.right)
         if left == 0 and right == 0:

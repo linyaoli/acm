@@ -10,7 +10,6 @@ class Solution:
     # @param sum, an integer
     # @return a boolean
     def hasPathSum(self, root, sum):
-
         return self.gen(root, 0, sum)
 
     def gen(self, root, n, sum):

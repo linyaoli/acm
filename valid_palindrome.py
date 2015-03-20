@@ -21,3 +21,4 @@ class Solution:
 
 sol = Solution()
 print sol.isPalindrome("1a2")
+print sol.isPalindrome("A man, a plan, a canal: Panama")

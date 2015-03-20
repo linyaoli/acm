@@ -1,3 +1,14 @@
+"""
+6 8 7 4 3 2
+1. from right to left, find the first element which violates the increasing order, marked as N.
+2. from right to left, find the first element which is larger that N, marked as M.
+3. swap N and M.
+> 7 8 6 4 3 2
+4. reverse all digits on the right of M.
+> 7 2 3 4 6 8
+
+
+"""
 class Solution:
     # @param num, a list of integer
     # @return a list of integer

@@ -11,7 +11,8 @@ class Solution:
         max_count = 0
         for idx1 in xrange(len(points)):
             dup = 1
-            radient_set = {0:0}
+            #
+            gradient_map = {0:0}
             for idx2 in xrange(len(points)):
                 if idx1 == idx2:
                     continue
@@ -20,19 +21,20 @@ class Solution:
                     dup += 1
                     continue
                 k = 0.0
+                # while the line is vertical.
                 if points[idx1].x - points[idx2].x == 0:
                     k = 999999999.0 # indicate k = Inf
                 else:
                     k = (points[idx1].y - points[idx2].y) * 1.0 / (points[idx1].x - points[idx2].x)
 
-                if k not in radient_set:
-                    radient_set[k] = 1
-                else:
-                    radient_set[k] += 1
+                try:
+                    gradient_map[k] += 1
+                except:
+                    gradient_map[k] = 1
 
-            for kys in radient_set.keys():
-                if radient_set[kys] + dup > max_count:
-                    max_count = radient_set[kys] + dup
+            for kys in gradient_map.keys():
+                if gradient_map[kys] + dup > max_count:
+                    max_count = gradient_map[kys] + dup
 
         return max_count
 

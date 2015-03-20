@@ -4,6 +4,15 @@
 #         self.val = x
 #         self.next = None
 
+# assume a is distance before intersection node.
+# assume b is distance slow's walking distance after intersection node.
+# assume c is remaining distance in the cycle except for b.
+
+# walking distance of slow = a + b.
+# walking distance of fast = a + b + c + b
+# thus, 2 * (a + b) = a + b + c + b
+# a = c
+
 class Solution:
     # @param head, a ListNode
     # @return a list node

@@ -15,7 +15,6 @@ class Solution:
     def inOrder(self, root):
         if not root:
             return
-
         self.inOrder(root.left)
         if not self.prev:
             self.prev = root
@@ -29,5 +28,5 @@ class Solution:
 
     def recoverTree(self, root):
         self.inOrder(root)
-        self.p1.val, self.p2.val = self.p2.val, self.p1.val        
+        self.p1.val, self.p2.val = self.p2.val, self.p1.val
         return root

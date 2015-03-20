@@ -1,3 +1,8 @@
+"""
+Given a singly linked list L: L0 -> L1 -> .. -> Ln-1 -> Ln,
+reorder it to: L0 -> Ln -> L1 -> Ln-1 -> L2 -> Ln-2 ->...
+
+"""
 class Solution:
     # @param head, a ListNode
     # @return nothing
@@ -15,7 +20,7 @@ class Solution:
             if not fast:
                 break
             slow = slow.next
-
+        
         tail = self.reverse(slow)
         slow.next = None
         self.merge(head, tail)
@@ -37,5 +42,3 @@ class Solution:
             head1.next = head2
             head1 = head2.next
             head2 = tmp
-
-        

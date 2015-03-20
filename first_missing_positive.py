@@ -9,6 +9,7 @@ class Solution:
                     break;
                 a = i
                 b = A[i] - 1
+                # put the num to A[num]
                 A[a], A[b] = A[b], A[a]
 
         for i in xrange(n):

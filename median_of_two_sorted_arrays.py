@@ -7,7 +7,21 @@ Thoughts:
 
 To find kth node:
 
-1. if A[ka-1] >= A[kb-1]
+        +---------+---------+
+Array A | part1   | part2   |
+        +---------+---------+
+        +---------------+---------------+
+Array B | part3         | part4         |
+        +---------------+---------------+
+
+
+each time compare the k/2 th node in A and B arrays.
+m = len(A) n = len(B)
+
+If (m/2+n/2+1) > k && am/2 > bn/2 , drop Section 2
+If (m/2+n/2+1) > k && am/2 < bn/2 , drop Section 4
+If (m/2+n/2+1) < k && am/2 > bn/2 ,  drop Section 3
+If (m/2+n/2+1) < k && am/2 < bn/2 ,  drop Section 1
 
 """
 

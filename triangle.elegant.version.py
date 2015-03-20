@@ -1,3 +1,16 @@
+"""
+Given a triangle, find the minimum path sum from top to bottom.
+Each step you may move to adjacent numbers on the row below.
+
+[
+     [2],
+    [3,4],
+   [6,5,7],
+  [4,1,8,3]
+]
+
+
+"""
 class Solution:
     # @param triangle, a list of lists of integers
     # @return an integer

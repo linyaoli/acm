@@ -15,6 +15,7 @@ class LRUCache:
     # @return an integer
     def get(self, key):
         try:
+            #if used, refresh the position of key.
             tmp = self.index[key]
             del self.index[key]
             self.index[key] = tmp

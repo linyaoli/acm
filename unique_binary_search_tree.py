@@ -1,7 +1,7 @@
 class Solution:
     # @return an integer
     # Count[i] = ∑ Count[0...k] * [ k+1....i]     0<=k<i-1
-    # Will recursion solve this problem?
+    # Will recursion solve this problem? Yes. refer to ** ii problem.
     # ------------------------------------------------------------------
     # 以i为根节点的树，其左子树由[0, i-1]构成， 其右子树由[i+1, n]构成。
     # ------------------------------------------------------------------
@@ -16,6 +16,3 @@ class Solution:
                     count[i] += count[j] * count[i - j - 1]
 
         return count[n]
-
-
-            

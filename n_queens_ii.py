@@ -1,3 +1,4 @@
+# return number of solutions
 class Solution:
     # @return an integer
     res = 0
@@ -21,6 +22,3 @@ class Solution:
                 A[cur] = i
                 if self.check(A, cur):
                     self.nqueens(A, cur + 1, n)
-
-
-         
