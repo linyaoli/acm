@@ -21,9 +21,12 @@ class Solution:
         return False
 
     def gen(self, board, word, k, i, j, m, n):
-        if k == len(word):
-            return True
+
+        if k == len(word): return True
+        #@param a: once the current route is not correct, return it as
+        # a flag to stop all recursion in this direction.
         a = False
+
         if i - 1 >= 0 and board[i-1][j] == word[k]:
             tmp = board[i-1][j]
             board[i-1][j] = '0'
