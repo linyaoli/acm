@@ -11,6 +11,7 @@ class Solution:
     def copyRandomList(self, head):
         if not head: return head
         cur = head
+        #insert a copy node after each node.
         while cur:
             tmp = RandomListNode(cur.label)
             tmp.next = cur.next

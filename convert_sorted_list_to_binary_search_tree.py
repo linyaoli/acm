@@ -24,6 +24,7 @@ class Solution:
 
     def helper(self, start, end):
         if start > end: return None
+        
         mid = (start + end) /2
         left = self.helper(start, mid - 1)
         parent = TreeNode(self.node.val)

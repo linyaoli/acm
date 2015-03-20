@@ -25,4 +25,4 @@ class Solution:
         return res
 
 sol = Solution()
-print sol.titleToNumber('AZ')
+print sol.titleToNumber('AAZ')

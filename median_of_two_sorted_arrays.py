@@ -1,3 +1,17 @@
+"""
+Thoughts:
+
+<> Surely we can merge, it takes O(n) time and O(n) space.
+
+<> divide-and-conquer
+
+To find kth node:
+
+1. if A[ka-1] >= A[kb-1]
+
+"""
+
+
 class Solution:
     # @return a float
     def findMedianSortedArrays(self, A, B):

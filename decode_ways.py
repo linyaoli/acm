@@ -1,3 +1,13 @@
+"""
+'A' -> 1
+'B' -> 2
+...
+'Z' -> 26
+
+Count[i] = Count[i-1]  if S[i-1] is a valid char
+       or   = Count[i-1]+ Count[i-2]  if S[i-1] and S[i-2] together is still a valid char.
+
+"""
 class Solution:
     # @param s, a string
     # @return an integer
@@ -43,4 +53,4 @@ class Solution:
             return 0
 
 sol = Solution()
-print sol.numDecodings("12120")
+print sol.numDecodings("4757562545844617494555774581341211511296816786586787755257741178599337186486723247528324612117156948")
