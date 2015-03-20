@@ -19,14 +19,11 @@ class Solution:
     }[c]
 
     def romanToInt(self, s):
-        sum = 0
-        for idx in range(len(s)):
-            if idx > 0 and self.atoi(s[idx]) > self.atoi(s[idx-1]):
-                sum += self.atoi(s[idx]) - self.atoi(s[idx-1]) * 2
-            else:
-                sum += self.atoi(s[idx])
-        return sum
-
-
+        ret = self.atoi(s[0])
+        for i in xrange(1, len(s)):
+            ret += self.atoi(s[i])
+            if self.atoi(s[i]) > self.atoi(s[i-1]):
+                ret -= 2 * self.atoi(s[i-1])
+        return ret
 
         

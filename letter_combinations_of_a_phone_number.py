@@ -1,6 +1,6 @@
 class Solution:
     # @return a list of strings, [s1, s2]
-    def letterCombinations(self, digits):        
+    def letterCombinations(self, digits):
         ret = []
         self.gen(0, ret, "", digits)
         return ret
@@ -29,3 +29,6 @@ class Solution:
             "9":"wxyz",
             "0":" "
         }[n]
+
+sol = Solution()
+print sol.letterCombinations("23")

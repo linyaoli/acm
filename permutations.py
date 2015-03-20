@@ -16,6 +16,14 @@ class Solution:
                 self.gen(num, i+1, res)
                 num[j], num[i] = num[i], num[j]
 
+    def gen2(self, num, i, res):
+        if i == len(num) - 1:
+            res.append(num[:])
+        else:
+            for j in xrange(i, len(num)):
+                num[j], num[i] = num[i], num[j]
+                self.gen(num, j+1, res)
+                num[j], num[i] = num[i], num[j]
 
 sol = Solution()
 num = [1,2,3]

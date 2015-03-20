@@ -23,7 +23,7 @@ class Solution:
     def gen(self, board, word, k, i, j, m, n):
         if k == len(word):
             return True
-        a = False        
+        a = False
         if i - 1 >= 0 and board[i-1][j] == word[k]:
             tmp = board[i-1][j]
             board[i-1][j] = '0'
