@@ -4,7 +4,6 @@ class Solution:
         max_contained = 0
         start = 0
         end = len(height) - 1
-
         while start < end:
             contained = min(height[start], height[end]) * (end - start)
             max_contained = max(max_contained, contained)
