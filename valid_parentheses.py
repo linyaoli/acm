@@ -17,8 +17,8 @@ class Solution:
                         return False
                 else:
                     return False
-                    
+
         return len(stack) == 0
 
 sol = Solution()
-print sol.isValid('()(([{}]{})))')
+print sol.isValid('())((([{}]{})))')

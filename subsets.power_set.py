@@ -10,8 +10,7 @@ class Solution:
         return sol
 
     def gen(self, res, n, i, s, sol):
-        if i == n:
-            return
+        if i == n: return
         for j in xrange(i, n):
             res.append(s[j])
             # every element can be in or not in.
