@@ -29,4 +29,4 @@ class Solution:
         return res
 
 sol = Solution()
-print sol.convertToTitle(104)
+print sol.convertToTitle(27)

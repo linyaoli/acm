@@ -27,3 +27,5 @@ class Solution:
             if cur[1].next:
                 heapq.heappush(heap, (cur[1].next.val, cur[1].next))
         return head
+#brute force O(nk2)
+#O(nklogk) O(k)

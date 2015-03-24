@@ -16,4 +16,15 @@ class Solution:
         elif root.left:
             self.helper(root.left)
 
-    # this algorithm also works for 2nd smalleset in bst.        
+    # this algorithm also works for 2nd smalleset in bst.
+    def helper2(self, root):
+        if not root: return
+        if root.right and not root.right.left and not root.right.right:
+            self.max2 = root
+        elif not root.right and root.left and not root.left.left and not root.left.right:
+            self.max2 = root.left            
+        else:
+            if root.right:
+                self.helper(root.right)
+            elif root.left:
+                self.helper(root.left)
