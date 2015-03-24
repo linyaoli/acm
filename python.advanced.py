@@ -93,8 +93,8 @@ def f(n):
 ''.join(`x` for x in xrange(101)) # `x` is equal to str(x)
 
 try:
-    with open('filename', 'r') as f:
-        print f.read()
+    with open('atoi.c', 'r') as f:
+        content = f.read()
 except IOError:
     pass
     #print 'No such file exists'
@@ -104,3 +104,73 @@ except IOError:
 dup_list = [1,2,3,4,4,4,5,1,2,7,8,8,10]
 unique_list = list(set(dup_list))
 #print unique_list
+
+# regarding the underlines
+# _func(), referred as the private function, cannot be accessed outside.
+# func_, used to distinguish from built-in functions, e.g. list_ -> list
+# __func, if this function is in class Test, when use dir(Test), you will see _Test__func.
+# __init__, __del__, __add__, __getitem__
+
+#read lines from file
+#with open('atoi.c') as f:
+#    content = f.readlines()
+#content = [x.strip('\n') for x in content]
+#content = content.split('\n')
+#print content
+#f.close()
+#print ''.join(content)
+#with open('test.io.py', 'w+') as f:
+#    f.write(''.join(content))
+class test:
+    def __enter__(self):
+        print 'in enter'
+    def __exit__(self, type, value, traceback):
+        print 'in exit'
+
+with test() as t:
+    print 'a'
+
+class test1:
+    def __init__(self):
+        pass
+    def f(self):
+        print 'test1'
+class test2:
+    def __init__(self):
+        pass
+    def f(self):
+        print 'test2'
+
+class test3(test2, test1):
+    def __init__(self):
+        pass
+#    def f(self):
+#        print 'test3'
+
+t = test3()
+t.f()
+
+def tester(a, b):
+    def tester1(a=a, b=b):
+        return a, b
+    return tester1
+
+tester1 = tester(10, 20)
+print tester1.func_closure
+
+def bread(func):
+    def wrapper():
+        print "</''''''\>"
+        k = func()
+        print k
+        print "<\______/>"
+        return '111'
+    return wrapper
+
+@bread
+def haha():
+    print 'haha'
+    return '222'
+
+a = haha()
+print a
