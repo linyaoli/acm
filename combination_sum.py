@@ -5,18 +5,19 @@ class Solution:
     def combinationSum(self, candidates, target):
         res = []
         self.target = target
-        self.gen(candidates, 0, len(candidates), res, [])
+        self.candidates = candidates
+        self.gen(0, res, [])
         return res
 
-    def gen(self, s, i, n, res, sol):
+    def gen(self, i, res, sol):
         if sum(sol) == self.target:
             res.append(sorted(sol[:]))
-        elif sum(sol) > self.target or i == n:
+        elif sum(sol) > self.target or i == len(self.candidates):
             return
         else:
-            for j in xrange(i, n):
-                sol.append(s[j])
-                self.gen(s, j, n, res, sol)
+            for j in xrange(i, len(self.candidates)):
+                sol.append(self.candidates[j])
+                self.gen(j, res, sol)
                 sol.pop()
 
 

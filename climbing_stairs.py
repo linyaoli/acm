@@ -14,6 +14,7 @@ class Solution:
 
     def climbStairs(self, n):
         if n < 3: return n
+        # use rotation variable, reduce O(n) space to O(1).
         a = 1
         b = 2
         ret = 0

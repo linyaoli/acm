@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +6,7 @@ typedef struct LinkedList{
     int val;
 }LNode;
 
-int del(LNode* q, int n){
+int removeNode(LNode* q, int n){
 
     LNode* dummy = (LNode*)malloc(sizeof(LNode));
     dummy->val = -1;
@@ -52,12 +51,12 @@ int main(void) {
 //      printf("%d ", start->val);
 //      start = start->next;
 //    }
-    del(lst, 7);
+    removeNode(lst, 7);
 
     return 0;
 }
 
-void removeNode(int val, LinkedList **list) {
+void removeNode1(int val, LinkedList **list) {
      LinkedList *prev = *list;
      while (prev && prev->val == val)
           prev = prev->next;
@@ -79,7 +78,7 @@ void removeNode(int val, LinkedList **list) {
       }
 }
 
-void removeNode(int val, ListNode **list) {
+void removeNode2(int val, ListNode **list) {
     while(*list!=NULL){
         if((*list)->val==val){
         ListNode *next=(*list)->next;

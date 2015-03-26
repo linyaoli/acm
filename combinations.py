@@ -11,7 +11,7 @@ class Solution:
             res.append(sol[:])
         else:
           for i in xrange(start, n):
-              sol.append(i+1)
+              sol.append(i+1) # if append(i) => [0,1] not [1,2]
               self.gen(n, i+1, res, sol)
               sol.pop()
 
