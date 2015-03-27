@@ -1,3 +1,4 @@
+#check if the tree is complete.
 class Solution:
     def complete(self, root):
         if not root: return True
