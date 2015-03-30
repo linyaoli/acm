@@ -1,19 +1,32 @@
-def removeDup(nums):
-    j = 0
-    for i in xrange(1, len(nums)):
-        if nums[i] != nums[j]:
-            j += 1
-            nums[j] = nums[i]
-    print nums[:j+1]
+n=5
+nodes = [4,4,4,4,4]
+visited = [-1] * n
 
-def removeAllDup(nums):
-    j = 0
-    i = 0
-    while i < len(nums):
-        if nums[i] != nums[j]:
-            j += 1
-            nums[j] = nums[i]
-        i += 1
+def dfs(m, i, visited, nodes):
+    if visited[i] == -1:
+        visited[i] = m
+        if nodes[i] != i:
+            return dfs(m, nodes[i], visited, nodes)
+        else:
+            return i
+    else:
+        return visited[i]
 
-    print nums
-removeAllDup([1,2,2,2,2,4])
+for i in xrange(n):
+    if visited[i] == -1:
+        s = dfs(i, i, visited, nodes)
+        if s != i:
+            for j in xrange(n):
+                if visited[j] == i:
+                    visited[j] = s
+
+count = [0] * n
+sum = 0
+for i in visited:
+    if count[i] == 0:
+        count[i] = 1
+        sum += 1
+if visited[0] == 0:
+    sum -= 1
+
+print sum
