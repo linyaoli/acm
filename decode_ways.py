@@ -12,10 +12,8 @@ class Solution:
     # @param s, a string
     # @return an integer
     def numDecodings(self, s):
-        if len(s) == 0 or s[0] == '0':
-            return 0
-        if len(s) == 1:
-            return 1
+        if len(s) == 0 or s[0] == '0': return 0
+        if len(s) == 1: return 1
 
         count_0 = count_1 = 0
         # if len(s) >= 2, in the first three chars, the way of first char must be one.
@@ -31,8 +29,7 @@ class Solution:
             if self.check2(s[i-1], s[i]):
                 count_0 += count_2
 
-            if count_0 == 0:
-                return 0
+            if count_0 == 0: return 0
             # move to next char, thus the current char becomes previous one, that is count_0 -> count_1, count_1->count_2
             count_2 = count_1
             count_1 = count_0

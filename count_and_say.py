@@ -4,16 +4,17 @@ class Solution:
         s = "1"
         for i in xrange(1, n):
             tmp = ""
-            last = s[0]
+            prev = s[0]
             count = 1
             for j in xrange(1, len(s)):
-                if last == s[j]:
+                if prev == s[j]:
                     count += 1
                 else:
-                    tmp += str(count) + last
-                    last = s[j]
+                    tmp += str(count) + prev
+                    prev = s[j]
                     count = 1
-            s = tmp + str(count) + last
+            s = tmp + str(count) + prev
+            print s
 
         return s
 
