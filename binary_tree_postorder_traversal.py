@@ -23,38 +23,39 @@ class Solution:
     # use one stack
     def postorderIterative2(self, root):
         if not root : return []
-        stack = []
-        prev = None
-        while stack != [] or root:
-            cur = stack[-1]
-            if not prev or prev.left == cur or prev.right == cur:
-                if cur.left:
-                    stack.append(cur.left)
-                elif cur.right:
-                    stack.append(cur.right)
-                elif cur.left == prev:
-                    if cur.right:
-                        stack.append(cur.right)
-                    else:
-                        print cur.data
-                        stack.pop()
-            prev = cur
+        stack = [root]
+        ans = []
+        while stack != []:
+            while root:
+                if root.right:
+                    stack.append(root.right)
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            if root.right and stack[-1] == root.right:
+                stack.pop()
+                stack.append(root)
+                root = root.right
+            else:
+                ans.append(root.val)
+                root = None
+        return ans
+
     # use two stacks
     def postorderTraversal(self, root):
         if not root: return []
         stack1 = [root]
         stack2 = []
-        prev = None
         ans = []
         while stack1 != []:
-            prev = stack1.pop()
-            stack2.append(prev)
-            if prev.left:
-                stack1.append(prev.left)
-            if prev.right:
-                stack1.append(prev.right)
+            node = stack1.pop()
+            stack2.append(node)
+            if node.left:
+                stack1.append(node.left)
+            if node.right:
+                stack1.append(node.right)
         while stack2 != []:
-            prev = stack2.pop()
-            ans.append(prev.val)
+            node = stack2.pop()
+            ans.append(node.val)
 
         return ans
