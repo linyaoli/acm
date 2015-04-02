@@ -20,23 +20,41 @@ class Solution:
         self.helper(root.right, res)
         res.append(root.val)
 
-    def postorderIterative(self, root):
-        if not root : return
-        s = [root]
+    # use one stack
+    def postorderIterative2(self, root):
+        if not root : return []
+        stack = []
         prev = None
-        while s != []:
-            curr = s[-1]
-            if not prev or prev.left == curr or prev.right == curr:
-                if curr.left:
-                    s.append(curr.left)
-                elif curr.right:
-                    s.append(curr.right)
-                elif curr.left == prev:
-                    if curr.right:
-                        s.append(curr.right)
+        while stack != [] or root:
+            cur = stack[-1]
+            if not prev or prev.left == cur or prev.right == cur:
+                if cur.left:
+                    stack.append(cur.left)
+                elif cur.right:
+                    stack.append(cur.right)
+                elif cur.left == prev:
+                    if cur.right:
+                        stack.append(cur.right)
                     else:
-                        print curr.data
-                        s.pop()
-            prev = curr
+                        print cur.data
+                        stack.pop()
+            prev = cur
+    # use two stacks
+    def postorderTraversal(self, root):
+        if not root: return []
+        stack1 = [root]
+        stack2 = []
+        prev = None
+        ans = []
+        while stack1 != []:
+            prev = stack1.pop()
+            stack2.append(prev)
+            if prev.left:
+                stack1.append(prev.left)
+            if prev.right:
+                stack1.append(prev.right)
+        while stack2 != []:
+            prev = stack2.pop()
+            ans.append(prev.val)
 
-            
+        return ans
