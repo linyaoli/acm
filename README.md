@@ -214,7 +214,14 @@ General guide to python regular matching
 -----------------
 ```python
 import re
-
+'.' : matches any character except newline.
+'^' : matches the start of a string.
+'$' : matches the end of a string.
+'*' : matches 0 or more repetitions of the preceding RE. i.e. 'ab*' matches a followed with any number of b.
+'+' : similar to '*', but 'ab+' will not match 'a'.
+'?' : match 0 or 1 of preceding RE.
+{m} : matches exactly m copies of preceding RE.
+{m, n}: 
 
 ```
 
