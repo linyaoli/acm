@@ -10,4 +10,4 @@ def coins(cns, i, ret, n):
             ret.pop()
 
 
-coins([1, 5, 10, 25], 0, [], 57)
+coins([1, 5, 10, 25], 0, [], 16)
