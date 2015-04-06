@@ -20,6 +20,8 @@ class Solution :
                 ret.append(str(last + 1) + "->" + str(arr[i] - 1))
             elif arr[i] - last > 1:
                 ret.append(str(last + 1))
+            else:
+                pass
             last = arr[i]
 
         return ret

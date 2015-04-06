@@ -1,5 +1,6 @@
 // This function returns k'th smallest element in arr[l..r] using
 // QuickSort based method.  ASSUMPTION: ALL ELEMENTS IN ARR[] ARE DISTINCT
+// Average cost is O(n), worst O(n^2)
 int kthSmallest(int arr[], int l, int r, int k)
 {
     // If k is smaller than number of elements in array
