@@ -17,8 +17,8 @@ class Solution:
             for j in xrange(i):
                 #if num[i] > num[j] that means num[i] is
                 #in the subsequence of num[j].
-                if num[i] > num[j] and lis[i] < lis[j] + 1:
-                    lis[i] = lis[j] + 1
+                if num[i] > num[j]:
+                    lis[i] = max(lis[i], lis[j] + 1)
 
         return max(lis)
 

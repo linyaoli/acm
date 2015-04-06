@@ -1,3 +1,4 @@
+#O(n) solution
 def fibo(n):
     fib0 = 0
     fib1 = 1
@@ -10,3 +11,4 @@ def fibo(n):
     return fib
 
 print fibo(10)
+#There is a O(logn) solution using matrix multiplication.

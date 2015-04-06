@@ -11,7 +11,7 @@ class Solution:
     def sortedArrayToBST(self, num):
         if num == [] : return None
         return self.helper(num, 0, len(num) - 1)
-        
+
     def helper(self, num, start, end):
         if start > end: return None
         mid = (end + start) / 2

@@ -1,6 +1,6 @@
 class Solution:
     def lca(self, root, node1, node2):
-        if not root: return root
+        if not root: return None
         if root == node1 or root == node2:
             return root
         left = self.lca(root.left, node1, node2)
