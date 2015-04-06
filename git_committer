@@ -13,4 +13,4 @@ echo "* uploading ... 33% *"
 echo "* uploading ... 65% *"
 echo "* uploading ... 100% *"
 git push
-echo " ######  DONE  ######"
+echo "  DONE !!"
