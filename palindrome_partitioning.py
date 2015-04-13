@@ -14,7 +14,7 @@ class Solution:
                 if self.isPalindrome(s[k:i+1]):
                     sol.append(s[k:i+1])
                     self.helper(i+1, s, ret, sol)
-                    sol.pop()                
+                    sol.pop()
 
     def isPalindrome(self, s):
         for i in xrange(len(s)/2):

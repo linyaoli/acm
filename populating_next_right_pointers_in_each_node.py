@@ -6,8 +6,8 @@
 #         self.right = None
 #         self.next = None
 # Populate each next pointer to point to its next right node.
-#If there is no next right node, the next pointer should be set to NULL.
-
+# If there is no next right node, the next pointer should be set to NULL.
+# Assume this is a perfect binary tree.
 
 class Solution:
     # @param root, a tree node

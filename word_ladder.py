@@ -8,7 +8,7 @@ class Solution:
             start == "" or end == "" or len(start) != len(end):
             return 0
         n = len(start)
-        dict.append(end)        
+        dict.append(end)
         queue = [[start, 1]]
 
         while queue != []:

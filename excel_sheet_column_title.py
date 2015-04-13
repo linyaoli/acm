@@ -17,15 +17,14 @@ class Solution:
         res = ""
         while num > 26:
             remain = num % 26
-            num = num / 26
-            if remain == 0:
-                num -=1
-                remain = 26
-
-            res = chr(remain + 64) + res
-
-        res = chr(num + 64) + res
-
+            if remain != 0:
+                res = chr(remain + 64) + res
+            else:
+                res = 'Z' + res
+                num -= 26
+            num /= 26
+        if num > 0:
+            res = chr(num + 64) + res
         return res
 
 sol = Solution()
