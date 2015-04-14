@@ -38,8 +38,5 @@ class Solution:
         return j == len(p)
 
 
-
-
-
 sol = Solution()
 print sol.isMatch("aaa", "*")

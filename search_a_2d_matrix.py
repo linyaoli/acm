@@ -3,12 +3,10 @@ class Solution:
     # @param target, an integer
     # @return a boolean
     def searchMatrix(self, matrix, target):
-        if matrix == [] or matrix == [[]]:
-            return False
+        if matrix == [] or matrix == [[]]: return False
         m = len(matrix)
         n = len(matrix[0])
-        if matrix[0][0] > target:
-            return False
+        if matrix[0][0] > target: return False
         start = 0
         end = m - 1
         i = 0
