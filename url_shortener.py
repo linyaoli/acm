@@ -27,7 +27,8 @@ class UrlShortener (object):
         # shorten a requested url and save it in redis.
         self.md.update(req)
         #TODO safe hashing
-        id = self.head +self.md.hexdigest()[:6]
+        #can use a random seed to avoid collision.
+        id = self.head + self.md.hexdigest()[:6]
         #TODO use base64 encoding
         #id = self.head + base64.b64encode(req)
         if id not in self.r:

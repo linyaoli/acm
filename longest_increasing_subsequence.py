@@ -23,7 +23,7 @@ class Solution:
         return max(lis)
 
     def naive(self, num, n, max_ref):
-        #a naive recursive solution, O(n^2)
+        #a naive recursive solution, O(2^n)
         if n == 1:  return 1
         ans = max_end = 1
         #recursively get all LIS ending with num.

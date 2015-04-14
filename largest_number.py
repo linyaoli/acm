@@ -11,26 +11,27 @@ class Solution:
     # @return a string
     def largestNumber(self, num):
         num = sorted(num, cmp=self.compare)
-        tmp_res = ""
-        for i in num:
-            tmp_res += str(i)
         res = ""
-        flag = False
-        for i in xrange(len(tmp_res)):
-            if tmp_res[i] == '0' and not flag:
-                continue
-            else:
-                res += tmp_res[i]
-                flag = True
-
-        if not flag:
-            res += '0'
-
-        return res
+        for i in num: res += str(i)
+        return res.lstrip('0') or '0'
 
     def compare(self, s1, s2):
         return (int(str(s2) + str(s1)) - int(str(s1) + str(s2)))
 
+
+
+""" An elegant solution
+class Solution:
+    # @param num, a list of integers
+    # @return a string
+    def largestNumber(self, num):
+        num = sorted([str(x) for x in num], cmp = self.compare)
+        ans = ''.join(num).lstrip('0')
+        return ans or '0'
+
+    def compare(self, a, b):
+        return [1, -1][a + b > b + a]
+"""
 
 
 

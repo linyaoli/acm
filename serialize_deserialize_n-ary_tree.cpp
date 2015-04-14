@@ -1,16 +1,12 @@
-"""
+/**
 Given an N-ary tree where every node has at-most N children.
 How to serialize and deserialze it? Serialization is to store tree
 in a file so that it can be later restored. The structure of tree must
  be maintained. Deserialization is reading tree back from file.
-
-"""
-
-
-"""cpp
 use a ')' marker to end one route.
-
+*/
 // This function stores the given N-ary tree in a file pointed by fp
+#define MARKER ")"
 void serialize(Node *root, FILE *fp)
 {
     // Base case
@@ -45,5 +41,3 @@ int deSerialize(Node *&root, FILE *fp)
     // Finally return 0 for successful finish
     return 0;
 }
-
-"""
