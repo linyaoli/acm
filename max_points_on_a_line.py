@@ -11,7 +11,6 @@ class Solution:
         max_count = 0
         for idx1 in xrange(len(points)):
             dup = 1
-            #
             gradient_map = {0:0}
             for idx2 in xrange(len(points)):
                 if idx1 == idx2:

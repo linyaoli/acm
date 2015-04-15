@@ -30,7 +30,8 @@ class Solution:
             if n1 in loop_dict:
                 loop_str = "".join(lst[loop_dict[n1]:count])
                 break
-            loop_dict[n1] = count        
+            loop_dict[n1] = count
+        print loop_dict
         res = lst[0]
         if len(lst) > 1:
             res += "."

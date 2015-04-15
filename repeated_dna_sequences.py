@@ -17,3 +17,20 @@ class Solution:
 
 sol = Solution()
 print sol.findRepeatedDnaSequences("AAAAAAAAAAA")
+"""
+A -> 00
+
+C -> 01
+
+G -> 10
+
+T -> 11
+
+ 
+
+ACGTACGTAC -> 00011011000110110001
+
+AAAAAAAAAA -> 00000000000000000000
+
+
+"""

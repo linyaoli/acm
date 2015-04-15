@@ -13,6 +13,7 @@ class UrlShortener (object):
         #self.r = redis.StrictRedis(host="localhost", port=6379, db=0)
         # use a simple hashmap instead of redis.
         self.r = {}
+        self.s = {}
         # google style
         self.head = "goo.gl/"
         # string hashing using md5
@@ -38,13 +39,25 @@ class UrlShortener (object):
 
         return id
 
+# can also use two hash maps
+# long url -> short url
+# short url -> long url
+    def shorten2(self, req):
+        if req in self.s:
+            return self.s[req]
+        else:
+            self.md.update(req)
+            id = self.head + self.md.hexdigest()[:6]
+            self.r[id] = req
+            self.s[req] = id
 
+        return id
 
 
 sol = UrlShortener()
-url1 = sol.shorten("https://www.google.pl/search?q=tomasz+nurkiewicz")
+url1 = sol.shorten2("https://www.google.pl/search?q=tomasz+nurkiewicz")
 print url1
-url2 = sol.shorten("https://www.uber.com/cities/beijing")
+url2 = sol.shorten2("https://www.uber.com/cities/beijing")
 print url2
 print sol.redirect(url1)
 print sol.redirect(url2)

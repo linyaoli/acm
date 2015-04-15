@@ -19,9 +19,12 @@ class Solution:
             else:
                 res[item.end] -= 1
         saber = 0#mark the intervals which share ranges.
+        # when saber becomes 0 again, that means one separate range has been decided.
         start = 0
         f_res = []
         tmp_res = []
+        #WRONG: res = dict(sorted(res.items(), key=operator.itemgetter(0)))
+        # sort by keys
         res = collections.OrderedDict(sorted(res.items()))
         for item in res:
             if start == 0:

@@ -17,7 +17,6 @@ class Solution:
                 return intervals
             elif newInterval.start > intervals[i].end:
                 i += 1
-                continue
             else:
                 newInterval.start = min(newInterval.start, intervals[i].start)
                 newInterval.end = max(newInterval.end, intervals[i].end)
