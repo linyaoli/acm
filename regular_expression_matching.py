@@ -29,12 +29,10 @@ class Solution:
                 if p[j-1] == '.':
                     dp[i][j] = dp[i-1][j-1]
                 elif p[j-1] == '*':
-                    #dp[i][j-1]: 'a*' treat as 'a'
-                    #dp[i][j-2]: 'a*' treat as ''
-                    #dp[i-1][j]: 'a*' treat as 'aa'
-                    #s[i-1] == p[j-2] or p[j-2] == '.' : 'a' matches 'a*' or 'a' matches '.*'
+                    # match 1 or 0 preceding element.
                     dp[i][j] = dp[i][j-1] or dp[i][j-2] or \
-                    (dp[i-1][j] and (s[i-1] == p[j-2] or p[j-2] == '.'))
+                    # match multiple preceding elements
+                    (dp[i-1][j] and (s[i-1] == p[j-2] or p[j-2] == '.')) # or match '.'
                 else:
                     dp[i][j] = dp[i-1][j-1] and s[i-1] == p[j-1]
 
