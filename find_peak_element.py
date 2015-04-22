@@ -21,7 +21,7 @@ class Solution:
         end = len(num)
         if end == 0:
             return 0
-        num = [-9223372036854775807] + num + [-9223372036854775807]
+        num = [-2**31] + num + [-2*31]
         while start <= end:
             mid = start + (end - start) / 2
             if num[mid] < num[mid + 1]:

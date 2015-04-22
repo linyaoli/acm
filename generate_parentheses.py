@@ -7,10 +7,7 @@ class Solution:
         return ret
 
     def helper(self, l, r, ret, str):
-        if l == 0:
-            while r > 0:
-                str += ')'
-                r -= 1
+        if l == 0 and r == 0:
             ret.append(str)
         else:
             if l > 0:
