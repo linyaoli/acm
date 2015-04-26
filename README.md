@@ -249,13 +249,5 @@ match.group(3)
 
 ```
 
-Contributing code
+哟哟！切客闹！煎饼果子！来！一！套！
 -----------------
-feel free to use and contribute.
-
-Donations
----------
-
-Disclaimer
-----------
-Most of the questions are from leetcode, CTCI and geeks4geeks.
