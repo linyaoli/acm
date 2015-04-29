@@ -6,7 +6,7 @@ class Solution:
         for i in xrange(n):
             while A[i] != i + 1:
                 if A[i] <= 0 or A[i] > n or A[i] == A[A[i] -1]:
-                    break;
+                    break
                 a = i
                 b = A[i] - 1
                 # put the num to A[num]
@@ -17,3 +17,6 @@ class Solution:
                 return i + 1
 
         return n + 1
+
+sol = Solution()
+print sol.firstMissingPositive([2,1])
