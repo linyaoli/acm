@@ -199,11 +199,11 @@ Code Test
 Reference
 -----------
 For these questions, you can find their original posts in the following websites:
-https://leetcode.com/problemset/algorithms/
-http://www.lintcode.com/en/problem/
-https://www.hackerrank.com/
-http://www.geeksforgeeks.org/
-http://www.programcreek.com/
+- https://leetcode.com/problemset/algorithms/
+- http://www.lintcode.com/en/problem/
+- https://www.hackerrank.com/
+- http://www.geeksforgeeks.org/
+- http://www.programcreek.com/
 
 
 Feature ideas
