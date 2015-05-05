@@ -1,3 +1,12 @@
+"""
+if sorted: O(n)
+
+if not sorted:
+    brute: O(n^2), O(1)
+    sort : O(nlogn)
+    hash: O(n), O(n)
+"""
+
 class Solution:
     # @return a tuple, (index1, index2)
     def twoSum(self, num, target):

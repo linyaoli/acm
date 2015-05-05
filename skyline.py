@@ -30,5 +30,13 @@ output:
 reference to :
 https://briangordon.github.io/2014/08/the-skyline-problem.html
 
+sol1:
+for each rectangle r:
+    for each heightmap cell c starting at r.left and ending at r.right:
+        c gets the max of r.height and the previous value of c
+sol2:
+for each critical point c
+    c.y gets the height of the tallest rectangle over c
+
 
 """
