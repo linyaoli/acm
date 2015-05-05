@@ -1,18 +1,25 @@
-# iteration
-def reverse(head):
-    if not head or not head.next:
-        return head
-    p = head
-    q = p.next
-    p.next = None
-    while q:
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    # @param {ListNode} head
+    # @return {ListNode}
+    def reverseList(self, head):
+        if not head or not head.next: return head
+        p = head
+        q = head.next
+        p.next = None
         r = q.next
-        q.next = p
-        p = q
-        q = r
-        if r:
-            r = r.next
-    return p
+        while p and q:
+            q.next = p
+            p = q
+            q = r
+            if q: r = q.next
+
+        return p
 
 class ListNode:
      def __init__(self, x):
@@ -27,7 +34,6 @@ def reverseR(pre, cur):
     next = cur.next
     cur.next = pre
     return reverseR(cur, next)
-
 
 
 head = ListNode(10)

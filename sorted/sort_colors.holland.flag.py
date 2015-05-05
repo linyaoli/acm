@@ -1,19 +1,19 @@
 class Solution:
-    # @param A a list of integers
-    # @return nothing, sort in place
-    def sortColors(self, A):
-        flag0 = 0
-        flag1 = 0
-        flag2 = len(A) - 1
-        while flag1 <= flag2:
-            if A[flag1] == 2:
-                A[flag1], A[flag2] = A[flag2], A[flag1]
-                flag2 -= 1
-            elif A[flag1] == 0:
-                A[flag0], A[flag1] = A[flag1], A[flag0]
-                flag0 += 1
-                flag1 += 1
+    # @param {integer[]} nums
+    # @return {void} Do not return anything, modify nums in-place instead.
+    def sortColors(self, nums):
+        r = 0
+        w = 0
+        b = len(nums) - 1
+        while w <= b:
+            if nums[w] == 2:
+                nums[w], nums[b] = nums[b], nums[w]
+                b -= 1
+            elif nums[w] == 0:
+                nums[w], nums[r] = nums[r], nums[w]
+                r += 1
+                w += 1
             else:
-                flag1 += 1
+                w += 1
 
-        return A
+        return
