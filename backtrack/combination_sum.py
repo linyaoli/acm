@@ -1,3 +1,10 @@
+"""
+given candidate set 2,3,6,7 and target 7,
+A solution set is:
+[7]
+[2, 2, 3]
+
+"""
 class Solution:
     # @param candidates, a list of integers
     # @param target, integer
