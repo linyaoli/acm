@@ -14,13 +14,21 @@ input: (left, right, height)
 [
     (0, 1, 2),
     (2, 4, 5),
-    (3, 5, 3),
+    (3, 5, 8),
     (5, 7, 2)
 ]
 
 output:
 
+[
+    (0, 1, 2),
+    (2, 3, 5),
+    (3, 5, 8),
+    (5, 7, 2)
+]
 
+reference to :
+https://briangordon.github.io/2014/08/the-skyline-problem.html
 
 
 """

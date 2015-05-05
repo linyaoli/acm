@@ -15,7 +15,7 @@ class Solution:
     def gen(self, root, n, sum):
         if not root: return False
         n += root.val
-        if not root.left and not root.right:
+        if not root.left and not root.right: # If this is a leaf node 
             if n == sum: return True
             else: return False
         return self.gen(root.left, n, sum) or self.gen(root.right, n, sum)
