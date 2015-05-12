@@ -2,18 +2,18 @@ class Solution:
     # @param s, a string
     # @return a list of lists of string
     def partition(self, s):
-        ret = []
-        self.helper(0, s, ret, [])
-        return ret
+        self.ret = []
+        self.helper(0, s, [])
+        return self.ret
 
-    def helper(self, k, s, ret, sol):
+    def helper(self, k, s, sol):
         if k == len(s):
-            ret.append(sol[:])
+            self.ret.append(sol[:])
         else:
             for i in xrange(k, len(s)):
                 if self.isPalindrome(s[k:i+1]):
                     sol.append(s[k:i+1])
-                    self.helper(i+1, s, ret, sol)
+                    self.helper(i+1, s, sol)
                     sol.pop()
 
     def isPalindrome(self, s):

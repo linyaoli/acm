@@ -6,11 +6,11 @@ class Solution:
         if len(s) > 12:
             return []
         sol = []
-        self.validate(0, s, [], sol, 4)
+        self.validate(0, s, [], sol)
         return sol
 
-    def validate(self, k, s, res, sol, n):
-        if n == 0 and k == len(s):
+    def validate(self, k, s, res, sol):
+        if len(res) == 4 and k == len(s):
             tmp = ".".join(res)
             sol.append(tmp)
 
@@ -18,8 +18,8 @@ class Solution:
             if k + i <= len(s) and int(s[k : k + i]) < 256:
                 if int(s[k : k + i]) >= 10 ** (i-1) or s[k : k + i] == "0":
                     res.append(s[k : k + i])
-                    self.validate(k + i, s, res, sol, n-1)
+                    self.validate(k + i, s, res, sol)
                     res.pop()
 
 sol = Solution()
-print sol.restoreIpAddresses("25525511135")
+print sol.restoreIpAddresses("10033")

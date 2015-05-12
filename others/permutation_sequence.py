@@ -1,3 +1,30 @@
+'''
+n = 3
+123
+132
+213
+231
+312
+321
+
+k = 3
+return '213'
+
+
+cases of n == 3: n!
+
+permutations: a1, a2, a3... an
+
+assume k1 = k,  a1 = k1/(n-1)!
+further, we have:
+a2 = k2/(n-2)!, k2 = k1 % (n-1)!
+...
+a(n-1) = k(n-1)/1!, k(n-1) = k(n-2) % 2!
+
+an = k(n-1)
+
+
+'''
 class Solution:
     # @return a string
     def getPermutation(self, n, k):

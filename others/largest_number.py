@@ -13,6 +13,7 @@ class Solution:
         num = sorted(num, cmp=self.compare)
         res = ""
         for i in num: res += str(i)
+        #lstrip: return a copy of the string with leading chars removed.
         return res.lstrip('0') or '0'
 
     def compare(self, s1, s2):

@@ -15,7 +15,7 @@ class Solution:
                 num[j], num[i] = num[i], num[j]
                 self.gen(num, i+1, res)
                 num[j], num[i] = num[i], num[j]
-    #check the difference
+    # check the difference
     # this is a wrong solution
     def gen2(self, num, i, res):
         if i == len(num) - 1:
