@@ -2,8 +2,7 @@ class Solution:
     # @param s, a string
     # @return an integer
     def longestValidParentheses(self, s):
-        if s == '' or s == '(' or s == ')':
-            return 0
+        if s in ['', '(', ')']: return 0
         stack = [(-1, ')')]
         maxLen = 0
         for i in xrange(len(s)):
