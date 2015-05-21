@@ -20,16 +20,16 @@ class Solution:
         # find min and max in list O(n)
         MIN, MAX = min(num), max(num)
         # divided range of each bucket
-        bucket_range = max(1, int((MAX - MIN - 1) / (n - 1)) + 1)
+        bucket_range = max(1, int((MAX - MIN - 1) / (n - 1)) + 1)        
         bucket_len = (MAX - MIN) / bucket_range + 1
         buckets = [None for _ in xrange(bucket_len)]
 
         for i in num:
-            loc = (i - MIN) / bucket_range
-            bucket = buckets[loc]
-            if bucket is None:
+            bucket_idx = (i - MIN) / bucket_range
+            bucket = buckets[bucket_idx]
+            if not bucket:
                 bucket = {'min': i, 'max': i}
-                buckets[loc] = bucket
+                buckets[bucket_idx] = bucket
             else:
                 bucket['min'] = min(bucket['min'], i)
                 bucket['max'] = max(bucket['max'], i)

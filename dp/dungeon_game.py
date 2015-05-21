@@ -1,3 +1,15 @@
+"""
+Solution:
+Start from the end point, back to the first point.
+In each grid, we find the minimum requirement to go to the next right or next down.
+
+State transaction:
+
+cur(i, j) = max(1, min(cur(i+1, j), cur(i, j+1)) - dungeon(i, j))
+cur(-1, -1) = max(1, 1 - dungeon(-1, -1))
+
+
+"""
 class Solution:
     # @param dungeon, a list of lists of integers
     # @return a integer

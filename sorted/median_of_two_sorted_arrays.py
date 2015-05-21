@@ -41,7 +41,7 @@ for a simpler median solution:
    of the below two subarrays.
    a)  From m1 to last element of ar1  (ar1[|_n/2_|...n-1])
    b)  From first element of ar2 to m2 (ar2[0...|_n/2_|])
-   
+
 5) Repeat the above process until size of both the subarrays
    becomes 2.
 6) If size of the two arrays is 2 then use below formula to get
@@ -50,7 +50,6 @@ for a simpler median solution:
 
 
 """
-
 
 class Solution:
     # @return a float
