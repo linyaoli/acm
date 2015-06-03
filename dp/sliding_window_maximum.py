@@ -36,9 +36,9 @@ class Solution:
             queue.append(i)
         # queue saves the indices, this queue must ensure that the largest
         # number will always be in the front.
+
         for i in xrange(w, n):
             ret[i - w] = arr[queue[0]]
-
             while queue != [] and arr[i] >= arr[queue[-1]]:
                 # if the newest number is larger than the smallest in last window.
                 # remove it.
@@ -48,6 +48,7 @@ class Solution:
                 queue.pop(0)
             # now arr[i] must be the smallest in the queue since all those smaller ones have been removed.
             queue.append(i)
+            print queue
 
         ret[n - w] = arr[queue[0]]
         return ret

@@ -13,7 +13,7 @@ class Solution:
         return self.check(root.left, root.right)
 
     def check(self, node1, node2):
-        if node1 is None and node2 is None:
+        if not node1 and not node2:
             return True
         elif not node1 or not node2 or node1.val != node2.val:
             return False

@@ -6,7 +6,7 @@ class Solution:
         n = len(s)
         p = [False] * n
         for i in xrange(1, n+1):
-            for j in xrange(0, i):
+            for j in xrange(i):
                 if s[j:i] in dict:
                     if j == 0:
                         p[i-1] = True

@@ -9,8 +9,7 @@ class Solution:
     # @param root, a tree node
     # @return a list of integers
     def preorderTraversal(self, root):
-        if not root:
-            return []
+        if not root: return []
         stack = [root]
         res = []
         while stack != []:

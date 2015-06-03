@@ -28,3 +28,4 @@ class Solution:
 
 sol = Solution()
 print sol.firstMissingPositive([0,4,4,2,1,6])
+ 

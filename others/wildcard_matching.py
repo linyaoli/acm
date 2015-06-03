@@ -24,10 +24,16 @@ class Solution:
                 i += 1
                 j += 1
             elif j < len(p) and p[j] == '*':
+                # TODO: deal with '*'
+                # save the current i and j.
+                # set j to the next character.
                 match = i
                 star = j
                 j += 1
             elif star != -1:
+                # TODO: compare until s[i] == p[j]
+                # if the current match results into a wrong result.
+                # we start from j = star + 1 again, find the next match.
                 j = star + 1
                 match += 1
                 i = match

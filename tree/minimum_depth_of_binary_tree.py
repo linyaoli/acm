@@ -25,3 +25,12 @@ class Solution:
         elif right == 0:
             right = sys.maxint
         return min(left, right) + 1
+
+    def helper(self, root, n): # solution 2
+        if not root: return 0
+        n += 1
+        if not root.left and not root.right:
+            self.depth = min(self.depth, n)
+        else:
+            self.helper(root.left, n)
+            self.helper(root.right, n)

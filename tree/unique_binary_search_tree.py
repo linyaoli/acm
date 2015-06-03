@@ -1,6 +1,6 @@
 class Solution:
     # @return an integer
-    # Count[i] = ∑ Count[0...j] * [ j+1....i]     0<=j<i-1
+    # Count[i] = ∑ Count[0...j] * Count[ j+1....i]     0<=j<i-1
     # Will recursion solve this problem? Yes. refer to ** ii problem.
     # ------------------------------------------------------------------
     # 以i为根节点的树，其左子树由[0, i-1]构成， 其右子树由[i+1, n]构成。

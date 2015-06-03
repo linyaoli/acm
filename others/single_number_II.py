@@ -9,9 +9,12 @@ class Solution:
             # ones: binary which appears once
             # twos: binary which appears twice
             # if appears three times, in twos the binary is set to 0.
-            _ones = (ones ^ A[i]) & ~twos
+            # ones ^ A[i] : appears odd times
+            _ones = (ones ^ A[i]) & ~twos # those already appear once, those appear twice are set to 0 in _ones.
+            # ones & A[i] : A[i] appears once in ones -> now we have twice
+            # ~A[i] & twos: A[i] didnt appear in twos -> now the twos remain
             twos = (ones & A[i]) | (~A[i] & twos)
-            ones = _ones            
+            ones = _ones
 
         return ones
 

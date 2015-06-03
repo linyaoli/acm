@@ -28,3 +28,6 @@ class Solution:
             val1, val2 = val2, max(val2, val1 + num[i])
 
         return val2
+
+sol = Solution()
+print sol.rob([1,2,3,4,5])

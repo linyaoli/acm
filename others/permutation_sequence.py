@@ -15,8 +15,12 @@ cases of n == 3: n!
 
 permutations: a1, a2, a3... an
 
-assume k1 = k,  a1 = k1/(n-1)!
+assume
+
+k1 = k,  a1 = k1/(n-1)!
+
 further, we have:
+
 a2 = k2/(n-2)!, k2 = k1 % (n-1)!
 ...
 a(n-1) = k(n-1)/1!, k(n-1) = k(n-2) % 2!

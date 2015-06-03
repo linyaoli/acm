@@ -1,6 +1,6 @@
 class Solution:
     # @return a boolean
-    def isScramble(self, s1, s2):
+    def isScramble(self, s1, s2): # recursive solution , O(3^n)
         if len(s1) != len(s2):
             return False
         if len(s1) == 1 and len(s2) == 1:
@@ -24,6 +24,9 @@ class Solution:
             if self.isScramble(s11, s22) and self.isScramble(s12, s21):
                 return True
         return False
+
+    def isScramble_dp(self, s1, s2):
+        # 3D dp problem. fuck it, i cant do this.
 
 sol = Solution()
 print sol.isScramble("rgeat", "great")

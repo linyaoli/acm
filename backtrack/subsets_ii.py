@@ -10,7 +10,6 @@ class Solution:
     def gen(self, i, n, S, sub, res):
         if i == n:
             return
-
         for j in xrange(i, n):
             sub.append(S[j])
             if sub[:] not in res:

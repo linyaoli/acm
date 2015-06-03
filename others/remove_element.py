@@ -8,4 +8,8 @@ class Solution:
             if A[idx] != elem:
                 A[cur] = A[idx]
                 cur += 1
+        print A
         return cur
+
+sol = Solution()
+print sol.removeElement([1,2,3,2,4,3,2], 2)

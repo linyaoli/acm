@@ -14,8 +14,7 @@ class Solution:
         return self.sum
 
     def gen(self, root, sum, path):
-        if root is None:
-            return 0
+        if not root: return 0
         path = path * 10 + root.val
         if root.left is None and root.right is None:
             self.sum += path

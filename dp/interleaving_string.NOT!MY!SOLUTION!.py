@@ -18,11 +18,10 @@ class Solution:
     =   (s3.lastChar == s1.lastChar) && Match[i-1][j]
       ||(s3.lastChar == s2.lastChar) && Match[i][j-1]
 初始条件：
-    i=0 && j=0时，Match[0][0] = true;
+    i=0 && j=0 时，Match[0][0] = true;
     i=0时， s3[j] = s2[j], Match[0][j] |= Match[0][j-1]
            s3[j] != s2[j], Match[0][j] = false;
 
     j=0时， s3[i] = s1[i], Match[i][0] |= Match[i-1][0]
            s3[i] != s1[i], Match[i][0] = false;
            """
-           

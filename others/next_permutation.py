@@ -8,7 +8,7 @@
 > 7 2 3 4 6 8
 
 
-"""
+""" 
 class Solution:
     # @param num, a list of integer
     # @return a list of integer
