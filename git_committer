@@ -7,10 +7,6 @@ git status
 echo "----- ----- ----- -----   change log ----- ----- ----- ----- ----- "
 now="$(date)"
 git commit -m "$now"
-echo "* uploading ... 2%  *"
-echo "* uploading ... 10% *"
-echo "* uploading ... 33% *"
-echo "* uploading ... 65% *"
-echo "* uploading ... 100% *"
+echo "* uploading ... *"
 git push
-echo "  DONE !!"
+echo " Donw. "
