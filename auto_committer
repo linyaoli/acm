@@ -1,5 +1,4 @@
 #!/bin/bash
-# auto committing all leet files.
 
 git add .
 echo "--------------------    All files loaded ----- ----- ----- ----- "
@@ -9,4 +8,4 @@ now="$(date)"
 git commit -m "$now"
 echo "* uploading ... *"
 git push
-echo " Donw. "
+echo " Done. "
