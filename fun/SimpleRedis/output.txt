@@ -1,0 +1,400 @@
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+SET a 10						
+SET b 10						
+NUMEQUALTO 10						2
+NUMEQUALTO 20						0
+SET b 30						
+NUMEQUALTO 10						1
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+SET a 10						
+BEGIN						
+NUMEQUALTO 10						2
+BEGIN						
+UNSET a						
+NUMEQUALTO 10						1
+ROLLBACK						
+NUMEQUALTO 10						2
+COMMIT						
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+SET a 10						
+SET b 10						
+NUMEQUALTO 10						2
+NUMEQUALTO 20						0
+SET b 30						
+NUMEQUALTO 10						1
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+SET a 10						
+SET b 10						
+NUMEQUALTO 10						2
+NUMEQUALTO 20						0
+SET b 30						
+NUMEQUALTO 10						1
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+SET a 10						
+SET b 10						
+NUMEQUALTO 10						3
+NUMEQUALTO 20						0
+SET b 30						
+NUMEQUALTO 10						2
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+SET a 50						
+BEGIN						
+GET a						50
+SET a 60						
+BEGIN						
+UNSET a						
+GET a						NULL
+ROLLBACK						
+GET a						60
+COMMIT						
+GET a						60
+GET ex						NULL
+SET ex 10						
+GET ex						10
+SET a 10						
+BEGIN						
+NUMEQUALTO 10						2
+BEGIN						
+UNSET a						
+NUMEQUALTO 10						1
+ROLLBACK						
+NUMEQUALTO 10						2
+COMMIT						
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+SET a 50						
+BEGIN						
+GET a						50
+SET a 60						
+BEGIN						
+UNSET a						
+GET a						NULL
+ROLLBACK						
+GET a						60
+COMMIT						
+GET a						60
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+SET a 10						
+BEGIN						
+NUMEQUALTO 10						1
+BEGIN						
+UNSET a						
+NUMEQUALTO 10						0
+ROLLBACK						
+NUMEQUALTO 10						1
+COMMIT						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+SET ex 10						
+GET ex						10
+UNSET ex						
+GET ex						NULL
+BEGIN						
+SET a 30						
+BEGIN						
+SET a 40						
+COMMIT						
+GET a						40
+ROLLBACK						NO TRANSACTION
