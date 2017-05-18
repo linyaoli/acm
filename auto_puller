@@ -9,9 +9,10 @@ counter=1
 
 for folder in */; do
   cd $folder
-  echo -ne "($counter/$N) pulling from $folder ...\r"
+  echo -ne "($counter/$N) pulling from $folder ..."
   let "counter++"
-  git pull
+  git co master
+  git pull > /dev/null
   cd ..
 done
 

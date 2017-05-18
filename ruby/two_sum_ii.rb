@@ -19,7 +19,7 @@ def two_sum(numbers, target)
   size = numbers.size
   endy = size - 1
   while start < endy 
-    if numbers[start]+ numbers[endy] > target
+    if numbers[start] + numbers[endy] > target
       endy -= 1
     elsif numbers[start] + numbers[endy] < target
       start += 1
