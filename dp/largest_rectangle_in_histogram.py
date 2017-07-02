@@ -22,4 +22,4 @@ class Solution:
         return area
 
 sol = Solution()
-print sol.largestRectangleArea([2, 4,5,3,4,5])
+print sol.largestRectangleArea([2,1,5,6,2,3])

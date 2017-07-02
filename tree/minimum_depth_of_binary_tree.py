@@ -34,3 +34,11 @@ class Solution:
         else:
             self.helper(root.left, n)
             self.helper(root.right, n)
+
+    def helper2(self, roor):
+        if no root: return 0
+        if not root.left:
+            return self.helper2(root.right) + 1
+        if not root.right:
+            return self.helper2(root.left) + 1
+        return min(self.helper2(root.left), self.helper2(root.right)) + 1

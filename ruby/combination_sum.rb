@@ -22,4 +22,4 @@ def permutate(i, res, sol)
       sol.pop
     end
   end
-end)}
+end
