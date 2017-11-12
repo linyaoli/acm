@@ -5,7 +5,7 @@ class Solution:
     def permute(self, num):
         res = []
         self.gen(num, 0, res)
-        return res
+        return res, len(res)
 
     def gen(self, num, i, res):
         if i == len(num) - 1:
