@@ -1,3 +1,6 @@
+# Summary of some.
+
+```python
 +----------------------------------------+
 Number of nodes in the tree.
 +----------------------------------------+
@@ -252,3 +255,4 @@ def checkComplete(self, root):
 Find the longest sub bunch.
 i.e. continuous nodes all to the left / right.
 +----------------------------------------+
+```
