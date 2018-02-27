@@ -1,0 +1,30 @@
+all: compile
+
+compile:
+	mvn compile -B -U
+
+#double check that ffmpeg and ffprobe has been installed in /usr/bin.
+install:
+	sudo yum install yasm
+	cd lib && unzip ffmpeg.zip
+	cd lib/FFmpeg-master && ./configure && make && sudo make install
+	sudo ln /usr/local/bin/ffmpeg /usr/bin/ffmpeg 
+	sudo ln /usr/local/bin/ffprobe /usr/bin/ffprobe
+
+clean:
+	mvn clean
+
+depclean: clean
+	rm -rf target/
+	rm -rf tmp/*
+
+run:
+	mvn spring-boot:run -Dmaven.test.skip=true -e -Dstart-class=com.msxf.ai.audio.AudioRestBootApplication
+
+test:
+	mvn -nsu install -q
+	mvn -nsu spring-boot:run -Dmaven.test.skip=true -e -Dstart-class=com.msxf.ai.audio.AudioRestBootApplication&
+	sleep 15
+	cd ./src/test/integration && npm install && ./node_modules/.bin/mocha api* --timeout 20000
+	ps axu | grep AudioRestBootApplication | grep -v grep | awk '{print $$2}' | xargs kill
+
