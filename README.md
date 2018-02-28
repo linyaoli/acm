@@ -2,6 +2,8 @@ Code Test
 ===============
  Code test on tons of simple algorithm questions.
 
+<b> I'm no longer updating this list </b>
+
 |Difficulty|    No.    |  Challenge Name  |     Tag       |            Description                 |
 |-----|-----------|------------------|---------------|----------------------------------------|
 | |    0      |  single number   |  bitwise      | find num appears only once.            |
