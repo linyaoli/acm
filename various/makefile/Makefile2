@@ -1,9 +1,0 @@
-compile:
-	mvn compile -B -U
-
-run:
-	mvn -pl bot-kms-rest -am spring-boot:run
-
-clean:
-	mvn clean
-
