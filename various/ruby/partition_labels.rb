@@ -19,8 +19,8 @@ def partition_labels(s)
     char_table << c
   end
 
-  index_table[0..-1].uniq.each do |c|
-    result << index_table[0..-1].count(c)
+  index_table.uniq.each do |c|
+    result << index_table.count(c)
   end
 
   result
