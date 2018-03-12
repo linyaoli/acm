@@ -239,10 +239,16 @@ There are two ways of doing subproblems.
 - Could you restate the problem? Could you restate it still differently? Go back to definitions.
 - If you cannot solve the proposed problem, try to solve first some related problem. Could you imagine a more accessible related problem? A more general problem? A more special problem? An analogous problem? Could you solve a part of the problem? Keep only a part of the condition, drop the other part; how far is the unknown then determined, how can it vary? Could you derive something useful from the data? Could you think of other data appropriate to determine the unknown? Could you change the unknown or data, or both if necessary, so that the new unknown and the new data are nearer to each other?
 - Did you use all the data? Did you use the whole condition? Have you taken into account all essential notions involved in the problem?
-33. CARRYING OUT THE PLAN
+3. CARRYING OUT THE PLAN
 - Third. Carry out your plan.
 - Carrying out your plan of the solution, check each step. Can you see clearly that the step is correct? Can you prove that it is correct?
 4. LOOKING BACK
 - Fourth. Examine the solution obtained.
 - Can you check the result? Can you check the argument?
 - Can you derive the solution differently? Can you see it at a glance? • Can you use the result, or the method, for some other problem?
+
+## Resources
+----------------
+[tech interview handbook](https://github.com/yangshun/tech-interview-handbook)
+[intro to graph](https://medium.com/basecs/a-gentle-introduction-to-graph-theory-77969829ead8)
+[and many more interesting posts](https://medium.com/basecs)
