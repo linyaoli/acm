@@ -31,5 +31,5 @@ def gen(remain)
   false
 end
 
-p can_partition_k_subsets([4, 3, 2, 3, 5, 2, 1], 6)
-p can_partition_k_subsets([1,1,1,1,1,1,1,1,1,1], 5)
+p can_partition_k_subsets([4, 3, 2, 3, 5, 2, 1], 4)
+# p can_partition_k_subsets([1,1,1,1,1,1,1,1,1,1], 5)
