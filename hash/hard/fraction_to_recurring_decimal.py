@@ -21,17 +21,19 @@ class Solution:
         count = 0
         loop_dict = {}
         loop_str = None
+        loop_start = 0
+
         while True:
-            lst.append(str(n1 / n2))
             count += 1
+            lst.append(str(n1 / n2))
             n1 = 10 * (n1 % n2)
-            if n1 == 0:
+            if n1 == 0 or n1 in loop_dict:
                 break
-            if n1 in loop_dict:
-                loop_str = "".join(lst[loop_dict[n1]:count])
-                break
-            loop_dict[n1] = count
-        print loop_dict
+            else:
+                loop_dict[n1] = count 
+
+        loop_str = "".join(lst[loop_dict[n1]:])
+
         res = lst[0]
         if len(lst) > 1:
             res += "."
@@ -39,9 +41,12 @@ class Solution:
             res += "".join(lst[1:len(lst) - len(loop_str)]) + "(" + loop_str + ")"
         else:
             res += "".join(lst[1:])
+
         if isNeg:
             res = "-" + res
+
         return res
 
 sol = Solution()
 print sol.fractionToDecimal(1,13)
+print sol.fractionToDecimal(2,3)
