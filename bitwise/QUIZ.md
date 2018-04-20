@@ -49,3 +49,63 @@ num & (~num + 1)
 ```c
 num & 1
 ```
+
+### least significant bit (LSB)
+the bit that determines whether the number is even or odd. Sometimes it also refers to the right-most bit.
+
+
+### clear all bits from LSB to nth bit
+```c
+m = ~((1 << n+1) - 1)
+x &= m
+
+e.g.
+x = 29 -> 00011101
+
+1 << 4 -> 00010000
+16 - 1 -> 00001111
+~15    -> 11110000
+x & m  -> 00010000
+```
+
+### most significant bit (MSB)
+the left-most bit.
+
+### clear all bits from MSB to nth bit
+```c
+m = (1 << n) - 1
+x &= m
+```
+
+### count set bits in number
+```c
+while x > 0
+  x &= x - 1
+  n += 1
+end
+```
+
+### find log base 2 of 32 bit number
+```c
+while x > 1
+  x = x >> 1
+  res += 1
+end
+```
+
+### check if given 32 bit number if power of 2
+```c
+x & (x & x-1)
+
+e.g.
+32  -> 00100000
+x-1 -> 00011111
+x & x-1 -> 00000000 
+```
+
+### swap two numbers
+```c
+a ^= b
+b ^= a
+a ^= b
+```
