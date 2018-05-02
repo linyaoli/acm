@@ -1,6 +1,0 @@
-[package]
-name = "salt_is_my_sugar"
-version = "0.1.0"
-authors = ["linyaoli <lileeyao@outlook.com>"]
-
-[dependencies]
