@@ -1,4 +1,4 @@
-@param {Integer[]} nums
+# @param {Integer[]} nums
 # @return {Integer}
 def array_pair_sum(nums)
   nums.sort!
