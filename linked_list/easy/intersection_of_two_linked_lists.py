@@ -9,7 +9,6 @@ class Solution:
     # @return the intersected ListNode
     def getIntersectionNode(self, headA, headB):
         if not headA or not headB: return None
-        inter_node = None
         iterA = headA
         iterB = headB
         lengthA = 0
