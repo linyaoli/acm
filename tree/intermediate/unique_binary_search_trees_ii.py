@@ -10,7 +10,7 @@ class Solution:
     def generateTrees(self, n):
         return self.helper(1, n)
 
-    def helper(self, start, end,):
+    def helper(self, start, end):
         solution = []
         if start > end:
             solution.append(None)

@@ -18,6 +18,3 @@ class Solution:
         for i in xrange(m, n+1):
             res *= i
         return res
-
-sol = Solution()
-print sol.generate(10)

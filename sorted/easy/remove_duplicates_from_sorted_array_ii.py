@@ -1,4 +1,4 @@
-# duplicates will only allow appear once. 
+# duplicates will only allow appear once.
 class Solution:
     # @param a list of integers
     # @return an integer
@@ -11,10 +11,9 @@ class Solution:
             if A[i] != A[j]:
                 count = 1
                 i += 1
-                A[i] = A[j]
             else:
                 if count < 2:
                     i += 1
-                    A[i] = A[j]
                     count += 1
+            A[i] = A[j]
         return i+1

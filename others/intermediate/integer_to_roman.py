@@ -39,9 +39,10 @@ class Solution:
               result.append(symbol[i+2])
         num = num % scale
         scale /= 10
-        res = ""
-        for i in result:
-            res += i
+
+      res = ""
+      for i in result:
+          res += i
       return res
 
 
